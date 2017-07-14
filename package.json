@@ -1,0 +1,47 @@
+{
+  "name": "TeachersPet",
+  "version": "1.0.0",
+  "description": "This is the organizational master Repo",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.83.0",
+    "body-parser": "^1.17.2",
+    "connect-multiparty": "^2.0.0",
+    "dotenv": "^4.0.0",
+    "env2": "^2.2.0",
+    "express": "^4.15.3",
+    "morgan": "^1.8.2",
+    "multer": "^1.3.0",
+    "multer-s3": "^2.7.0",
+    "react": "^0.14.9",
+    "react-dom": "^0.14.9",
+    "react-router": "^2.4.1",
+    "s3fs": "^2.5.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.13",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "webpack": "^1.13.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ejqassem/TeachersPet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ejqassem/TeachersPet/issues"
+  },
+  "homepage": "https://github.com/ejqassem/TeachersPet#readme"
+}
