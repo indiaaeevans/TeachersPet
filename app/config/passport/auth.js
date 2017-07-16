@@ -11,9 +11,9 @@ $(function() {
         // check if all fields are filled
         if ( $("input.newuser").val() ) {
 
-            var userEmail = $("#newUserEmail").val().trim();
-            var userPassword = $("#newUserPassword").val().trim();
-            var userName = $("#newUserName").val().trim();
+            var userEmail = $("#newemailinput").val().trim();
+            var userPassword = $("#newpasswordinput").val().trim();
+            var userName = $("#newnameinput").val().trim();
 
             // This will create a new object to go into the database
             var newUser = {
@@ -37,11 +37,11 @@ $(function() {
                 alert("There was an error creating your user profile.");
 
             });
-            // // This will get the users to identify the last user
-            // $.get("/api/user", getUserIds)
+
 
         } else {
             $(".alertUser").text("Please fill all required fields.");
         }
     
     });
+});

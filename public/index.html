@@ -126,19 +126,19 @@
                         <!--Comment-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="emailinput" class="materialize-textarea"></textarea>
+                                <input id="emailinput" type="email" class="validate"></input>
                                 <label for="emailinput">Email:</label>
                             </div>
                         </div>
                         <!--Name-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="passwordinput" type="email" class="validate">
+                                <input id="passwordinput" type="password" class="validate">
                                 <label for="passwordinput">Password</label>
                             </div>
                             <!-- FORM SUBMIT BUTTON-->
                             <div class="col s2 right-align">
-                                <button id="submit" class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
+                                <button id="signinbutton" class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
                                     <i class="material-icons right">input</i>
                                 </button>
                             </div>
@@ -157,22 +157,29 @@
                 <!-- FORM INPUT -->
                 <div class="row">
                     <form class="col s12">
-                        <!--Comment-->
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="newemailinput" class="materialize-textarea"></textarea>
-                                <label for="newemailinput">Email:</label>
-                            </div>
-                        </div>
                         <!--Name-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="newpasswordinput" type="email" class="validate">
+                                <input id="newnameinput" type="text" class="validate newuser"></input>
+                                <label for="newnameinput">Name:</label>
+                            </div>
+                        </div>                       
+                        <!--Email-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="newemailinput" type="email" class="validate newuser"></input>
+                                <label for="newemailinput">Email:</label>
+                            </div>
+                        </div>
+                        <!--Password-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="newpasswordinput" type="password" class="newuser validate">
                                 <label for="newpasswordinput">Password</label>
                             </div>
                             <!-- FORM SUBMIT BUTTON-->
                             <div class="col s2 right-align">
-                                <button id="submit" class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
+                                <button id="signupbutton" class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
                                     <i class="material-icons right">input</i>
                                 </button>
                             </div>
@@ -195,4 +202,5 @@
             $('.modal').modal();
         });
     </script>
+    <script src="../app/config/passport/auth.js"></script>
 </html>
