@@ -58,3 +58,4 @@ module.exports = function (app, passport) {
     else res.redirect('/signin');
   }
 }
+
