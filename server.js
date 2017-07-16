@@ -60,7 +60,7 @@ db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
-// do we need lines 5 and 6? 41-42 below seems to be the same
+// ROUTES
 require('./routes/htmlRoutes')(app);
 require('./routes/awsRoutes')(app);
 // Authentication routes
