@@ -60,13 +60,13 @@ db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
-// do we need lines 5 and 6? 41-42 below seems to be the same
+// ROUTES
 require('./routes/htmlRoutes')(app);
 require('./routes/awsRoutes')(app);
 // Authentication routes
 require('./routes/authRoutes.js')(app, passport);
 // load passport strategies
-require('./app/config/passport/passport.js')(passport, db.User);
+require('./app/config/passport/passport.js')(passport, db.Teacher);
 
 app.listen(PORT, function(err) {
     if (!err) console.log("Site is live. Now listening to port:", PORT);
