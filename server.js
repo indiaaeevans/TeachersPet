@@ -55,7 +55,7 @@ require('./routes/awsRoutes')(app);
 var authRoute = require('./routes/authRoutes.js')(app, passport);
 
 // load passport strategies
-require('./app/config/passport/passport.js')(passport, db.User);
+require('./app/config/passport/passport.js')(passport, db.Teacher);
 
 // Sync Database
 // db.sequelize.sync({force: false}).then(function() {
