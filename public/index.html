@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Teacher's Pet</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/css/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="assets/css/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!-- link to css stykesheet-->
+    <!-- <link rel="stylesheet" href="assets/css/style.css">
+ -->
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="teal lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Teacher's Pet</a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href='#modal1'>Log In
+                    </a>
+                </li>
+                <li><a href='#modal2'> Register
+                </li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <!-- Jumbotron/Banner -->
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br>
+            <br>
+            <div class="row center extra-padding">
+                <h5 class="header col s12 light">Manage your class today!</h5>
+            </div>
+            <div class="row extra-padding center">
+                <a class="waves-effect waves-light btn orange lighten-3" type="submit" id="login" href="#modal1">ENTER TEACHER PORTAL</a>
+
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <!-- Marketing Blurbs -->
+    <div class="container">
+        <div class="section">
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <!--             <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+ -->
+                        <center><img class="icons" src="assets/images/icon1.png"></center>
+                        <h5 class="center">No need to write/memorize everything</h5>
+                        <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <center><img class="icons" src="assets/images/icon2.png"></center>
+                        <h5 class="center">Keep things in a centralized location</h5>
+                        <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <center><img class="icons" src="assets/images/icon3.png"></center>
+                        <h5 class="center">Students can easily get a sense of where they stand</h5>
+                        <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer orange">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Company Bio</h5>
+                    <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat./p>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Settings</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Logging in -->
+        <div id="modal1" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h4>Log In</h4>
+                <!-- FORM INPUT -->
+                <div class="row">
+                    <form class="col s12">
+                        <!--Comment-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="bodyinput" class="materialize-textarea"></textarea>
+                                <label for="bodyinput">Email:</label>
+                            </div>
+                        </div>
+                        <!--Name-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="nameinput" type="email" class="validate">
+                                <label for="name">Password</label>
+                            </div>
+                            <!-- FORM SUBMIT BUTTON-->
+                            <div class="col s2 right-align">
+                                <button id="submit" class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
+                                    <i class="material-icons right">input</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+            </div>
+        </div>
+        <!-- Modal for Logging in -->
+        <div id="modal2" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h4>Register</h4>
+                <!-- FORM INPUT -->
+                <div class="row">
+                    <form class="col s12">
+                        <!--Comment-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="bodyinput" class="materialize-textarea"></textarea>
+                                <label for="bodyinput">Email:</label>
+                            </div>
+                        </div>
+                        <!--Name-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="nameinput" type="email" class="validate">
+                                <label for="name">Password</label>
+                            </div>
+                            <!-- FORM SUBMIT BUTTON-->
+                            <div class="col s2 right-align">
+                                <button id="submit" class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
+                                    <i class="material-icons right">input</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="assets/css/materialize/js/materialize.js"></script>
+    <script src="assets/css/materialize/js/materialize.min.js""></script>
+</body>
+<script type="text/javascript">
+    // initialize modals
+    $(document).ready(function() {
+        $('.modal').modal();
+    });
+</script>
+</html>
