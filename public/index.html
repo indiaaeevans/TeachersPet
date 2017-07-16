@@ -109,6 +109,13 @@
                 </div>
             </div>
         </div>
+         <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
+           
         <!-- Modal for Logging in -->
         <div id="modal1" class="modal modal-fixed-footer">
             <div class="modal-content">
@@ -119,15 +126,15 @@
                         <!--Comment-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="bodyinput" class="materialize-textarea"></textarea>
-                                <label for="bodyinput">Email:</label>
+                                <textarea id="emailinput" class="materialize-textarea"></textarea>
+                                <label for="emailinput">Email:</label>
                             </div>
                         </div>
                         <!--Name-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="nameinput" type="email" class="validate">
-                                <label for="name">Password</label>
+                                <input id="passwordinput" type="email" class="validate">
+                                <label for="passwordinput">Password</label>
                             </div>
                             <!-- FORM SUBMIT BUTTON-->
                             <div class="col s2 right-align">
@@ -153,15 +160,15 @@
                         <!--Comment-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="bodyinput" class="materialize-textarea"></textarea>
-                                <label for="bodyinput">Email:</label>
+                                <textarea id="newemailinput" class="materialize-textarea"></textarea>
+                                <label for="newemailinput">Email:</label>
                             </div>
                         </div>
                         <!--Name-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="nameinput" type="email" class="validate">
-                                <label for="name">Password</label>
+                                <input id="newpasswordinput" type="email" class="validate">
+                                <label for="newpasswordinput">Password</label>
                             </div>
                             <!-- FORM SUBMIT BUTTON-->
                             <div class="col s2 right-align">
@@ -177,21 +184,15 @@
                 <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
             </div>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-                Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-            </div>
-        </div>
-    </footer>
+</body>
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="assets/css/materialize/js/materialize.js"></script>
-    <script src="assets/css/materialize/js/materialize.min.js""></script>
-</body>
-<script type="text/javascript">
-    // initialize modals
-    $(document).ready(function() {
-        $('.modal').modal();
-    });
-</script>
+    <script src="assets/css/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        // initialize modals
+        $(document).ready(function() {
+            $('.modal').modal();
+        });
+    </script>
 </html>
