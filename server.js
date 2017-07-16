@@ -1,17 +1,17 @@
 'use strict';
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-var apiRoutes = require('./routes/apiRoutes');
-var htmlRoutes = require('./routes/htmlRoutes');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+
 // Authentication dependencies
 var passport = require('passport');
 var session = require('express-session');
 // var env = require('dotenv').load();
 
 // Models for user login (uses sequelize right now but we want to convert to mongodb)
-var db = require("./app/models-seq/");
+var db = require("./models/Teacher");
 
 // load environment variables into process.env
 require('dotenv').config();
@@ -21,12 +21,8 @@ let app = express();
 // set PORT variable
 const PORT = process.env.PORT || 8080;
 
-// Run Morgan for Logging
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 
 // For Passport
 app.use(session({
@@ -37,12 +33,24 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
+
+// parse application/json
+app.use(bodyParser.json());
+
+// Override with POST having ?_method=DELETE
+app.use(methodOverride('_method'));
+
 // Static directory
 app.use(express.static(path.join(__dirname, './public')));
 
 // do we need lines 5 and 6? 41-42 below seems to be the same
 require('./routes/htmlRoutes')(app);
-require('./routes/apiRoutes')(app);
+require('./routes/awsRoutes')(app);
 // Authentication routes
 var authRoute = require('./routes/authRoutes.js')(app, passport);
 
@@ -50,13 +58,14 @@ var authRoute = require('./routes/authRoutes.js')(app, passport);
 require('./app/config/passport/passport.js')(passport, db.User);
 
 // Sync Database
-db.sequelize.sync({force: false}).then(function() {
-    console.log('Database looks fine.')
-}).catch(function(err) {
-    console.log(err, "Something went wrong with the Database Update!")
-});
+// db.sequelize.sync({force: false}).then(function() {
+//     console.log('Database looks fine.')
+// }).catch(function(err) {
+//     console.log(err, "Something went wrong with the Database Update!")
+// });
 
 app.listen(PORT, function(err) {
-    if (!err) console.log("Site is live.");
+    if (!err) console.log("Site is live. Now listening to port:", PORT);
     else console.log(err)
 });
+
