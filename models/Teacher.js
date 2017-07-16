@@ -56,9 +56,21 @@ var TeacherSchema = new Schema({
       type: String,
       unique: true,
     },
-    username: {
+    email: {
       type: String,
       unique: true,
+    },
+    password: {
+      type: String,
+      unique: true
+    },
+    // from user auth with sequelize...not sure how best to convert to mongodb
+    last_login: {
+      type: DATE
+    },
+    status: {
+      type: DataTypes.ENUM('active', 'inactive'),
+      defaultValue: 'active'
     },
     classes: [ClassSchema]
   }

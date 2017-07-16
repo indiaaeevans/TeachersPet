@@ -11,7 +11,7 @@ var mongoose = require("mongoose");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
-// Models for user login (uses sequelize right now but we want to convert to mongodb)
+// Models
 var db = require("./models/Teacher");
 
 // Initialize app method
