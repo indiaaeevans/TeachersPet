@@ -4,11 +4,15 @@ var mongoose = require('mongoose');
 // Create a Schema class with mongoose
 var Schema = mongoose.Schema;
 
+
 var StudentSchema = new Schema({
   student: {
     name: {
       type: String, 
       unique: true 
+    },
+    email: {
+      type: String
     },
     attendance: [{
       date: [{
@@ -33,6 +37,7 @@ var StudentSchema = new Schema({
   }
 })
 
+
 // initialize Classes Schema 
 var ClassSchema = new Schema({
   class: {
@@ -43,6 +48,7 @@ var ClassSchema = new Schema({
       students: [StudentSchema]
   },
 });
+
 
 var TeacherSchema = new Schema({
   teacher: {
@@ -58,7 +64,9 @@ var TeacherSchema = new Schema({
   }
 });
 
+
 var Teacher = mongoose.model("Teacher", TeacherSchema);
+
 
 module.exports = Teacher;
 
