@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, './public')));
 
 // ROUTES
 require('./routes/htmlRoutes')(app);
-require('./routes/awsRoutes')(app);
+// require('./routes/awsRoutes')(app);
 // Authentication routes
 require('./routes/authRoutes.js')(app, passport);
 // load passport strategies
