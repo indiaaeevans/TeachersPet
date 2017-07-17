@@ -122,23 +122,23 @@
                 <h4>Log In</h4>
                 <!-- FORM INPUT -->
                 <div class="row">
-                    <form class="col s12">
-                        <!--Comment-->
+                    <form class="col s12" id="signin" name="signin" method="post" action="/signin">
+                        <!--EMAIL-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="emailinput" type="email" class="validate"></input>
-                                <label for="emailinput">Email:</label>
+                                <input name="email" type="email" class="validate"></input>
+                                <label for="email">Email:</label>
                             </div>
                         </div>
-                        <!--Name-->
+                        <!--PASSWORD-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="passwordinput" type="password" class="validate">
-                                <label for="passwordinput">Password</label>
+                                <input name="password" type="password" class="validate">
+                                <label for="password">Password</label>
                             </div>
                             <!-- FORM SUBMIT BUTTON-->
                             <div class="col s2 right-align">
-                                <button id="signinbutton" class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
+                                <button id="signinbutton" class="btn waves-effect waves-light blue lighten-1" type="submit" value="Sign In">Submit
                                     <i class="material-icons right">input</i>
                                 </button>
                             </div>
@@ -156,30 +156,30 @@
                 <h4>Register</h4>
                 <!-- FORM INPUT -->
                 <div class="row">
-                    <form class="col s12">
+                    <form class="col s12" id="signup" name="signup" method="post" action="/signup">
                         <!--Name-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="newnameinput" type="text" class="validate newuser"></input>
-                                <label for="newnameinput">Name:</label>
+                                <input name="name" type="text" class="validate newuser"></input>
+                                <label for="name">Name:</label>
                             </div>
                         </div>                       
                         <!--Email-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="newemailinput" type="email" class="validate newuser"></input>
-                                <label for="newemailinput">Email:</label>
+                                <input name="email" type="email" class="validate newuser"></input>
+                                <label for="email">Email:</label>
                             </div>
                         </div>
                         <!--Password-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="newpasswordinput" type="password" class="newuser validate">
-                                <label for="newpasswordinput">Password</label>
+                                <input name="password" type="password" class="newuser validate">
+                                <label for="password">Password</label>
                             </div>
                             <!-- FORM SUBMIT BUTTON-->
                             <div class="col s2 right-align">
-                                <button id="signupbutton" class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
+                                <button id="signupbutton" class="btn waves-effect waves-light blue lighten-1" type="submit" value="Sign Up">Submit
                                     <i class="material-icons right">input</i>
                                 </button>
                             </div>
@@ -202,5 +202,4 @@
             $('.modal').modal();
         });
     </script>
-    <!-- <script src="../app/config/passport/auth.js"></script> -->
 </html>
