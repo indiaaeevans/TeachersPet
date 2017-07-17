@@ -116,45 +116,50 @@
 //     // 	res.redirect("/enter");
 //     // });
 //   });
+// // }
+
+// Work with this following route 
+// ==========================================
+
+
+// var express = require('express'),
+//   aws = require('aws-sdk'),
+//   bodyParser = require('body-parser'),
+//   multer = require('multer'),
+//   multerS3 = require('multer-s3'),
+//   dotenv = require('dotenv');
+
+// module.exports = function (app) {
+
+//   dotenv.load();
+
+//   aws.config.update({
+//     secretAccessKey: process.env.accessKeyId,
+//     accessKeyId: process.env.secretAccessKey,
+//     region: process.env.region
+//   });
+
+//   s3 = new aws.S3({
+//     apiVersion: '2006-03-01'
+//   });
+
+//   app.use(bodyParser.json());
+
+//   var upload = multer({
+//     storage: multerS3({
+//       s3: s3,
+//       bucket: 'bucket-name',
+//       key: function (req, file, cb) {
+//         console.log(file);
+//         cb(null, file.originalname); //use Date.now() for unique file keys
+//       }
+//     })
+//   });
+
+//   //used by upload form
+//   app.post('/upload', upload.array('upl', 1), function (req, res, next) {
+//     res.send("Uploaded!");
+//   });
+
 // }
-var express = require('express'),
-  aws = require('aws-sdk'),
-  bodyParser = require('body-parser'),
-  multer = require('multer'),
-  multerS3 = require('multer-s3'),
-  dotenv = require('dotenv');
-
-module.exports = function (app) {
-
-  dotenv.load();
-
-  aws.config.update({
-    secretAccessKey: process.env.accessKeyId,
-    accessKeyId: process.env.secretAccessKey,
-    region: process.env.region
-  });
-
-  s3 = new aws.S3({
-    apiVersion: '2006-03-01'
-  });
-
-  app.use(bodyParser.json());
-
-  var upload = multer({
-    storage: multerS3({
-      s3: s3,
-      bucket: 'bucket-name',
-      key: function (req, file, cb) {
-        console.log(file);
-        cb(null, file.originalname); //use Date.now() for unique file keys
-      }
-    })
-  });
-
-  //used by upload form
-  app.post('/upload', upload.array('upl', 1), function (req, res, next) {
-    res.send("Uploaded!");
-  });
-
-}
 

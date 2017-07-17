@@ -4,10 +4,17 @@ module.exports = function(sequelize, DataTypes) {
   var Students = sequelize.define('Students', {
     name: {
       type: DataTypes.STRING, 
-      notEmpty: true 
+      notEmpty: true, 
+      validate: {
+        isAlpha: true 
+      }
     }, 
     email: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING, 
+      notEmpty: true, 
+      validate: {
+        isEmail: true, 
+      }
     }
   }, {
     classMethods: {
