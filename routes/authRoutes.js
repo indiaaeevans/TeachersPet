@@ -1,3 +1,5 @@
+const path = require('path');
+
 // ROUTES FOR USER AUTHENTICATION 
 module.exports = function (app, passport) {
 

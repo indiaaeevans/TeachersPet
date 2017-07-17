@@ -21,10 +21,14 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     password: {
-      type: DataTypes.STRING, 
-      validate: {
-        len: [6,12]
-      }
+      type: DataTypes.STRING,
+    },
+    last_login: {
+        type: DataTypes.DATE
+    },
+    status: {
+        type: DataTypes.ENUM('active', 'inactive'),
+        defaultValue: 'active'
     }
   }, {
     classMethods: {
