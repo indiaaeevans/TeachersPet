@@ -101,6 +101,28 @@ label {
 }
 
 
+/* Summary Page */
+.name{
+    font-size: 12px;
+}
+
+.email{
+    font-size: 12px;
+}
+
+.collection .collection-item.avatar{
+    min-height: 50px;
+}
+
+.circle{
+    height: 50px;
+}
+
+
+/* navbar code */
+
+
+
 /* media tags */
 
 @media screen and (min-width: 1025px) and (max-width: 1280px) {

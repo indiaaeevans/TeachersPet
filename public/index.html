@@ -109,6 +109,13 @@
                 </div>
             </div>
         </div>
+         <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
+           
         <!-- Modal for Logging in -->
         <div id="modal1" class="modal modal-fixed-footer">
             <div class="modal-content">
@@ -119,19 +126,19 @@
                         <!--Comment-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="bodyinput" class="materialize-textarea"></textarea>
-                                <label for="bodyinput">Email:</label>
+                                <input id="emailinput" type="email" class="validate"></input>
+                                <label for="emailinput">Email:</label>
                             </div>
                         </div>
                         <!--Name-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="nameinput" type="email" class="validate">
-                                <label for="name">Password</label>
+                                <input id="passwordinput" type="password" class="validate">
+                                <label for="passwordinput">Password</label>
                             </div>
                             <!-- FORM SUBMIT BUTTON-->
                             <div class="col s2 right-align">
-                                <button id="submit" class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
+                                <button id="signinbutton" class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
                                     <i class="material-icons right">input</i>
                                 </button>
                             </div>
@@ -150,22 +157,29 @@
                 <!-- FORM INPUT -->
                 <div class="row">
                     <form class="col s12">
-                        <!--Comment-->
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="bodyinput" class="materialize-textarea"></textarea>
-                                <label for="bodyinput">Email:</label>
-                            </div>
-                        </div>
                         <!--Name-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="nameinput" type="email" class="validate">
-                                <label for="name">Password</label>
+                                <input id="newnameinput" type="text" class="validate newuser"></input>
+                                <label for="newnameinput">Name:</label>
+                            </div>
+                        </div>                       
+                        <!--Email-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="newemailinput" type="email" class="validate newuser"></input>
+                                <label for="newemailinput">Email:</label>
+                            </div>
+                        </div>
+                        <!--Password-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="newpasswordinput" type="password" class="newuser validate">
+                                <label for="newpasswordinput">Password</label>
                             </div>
                             <!-- FORM SUBMIT BUTTON-->
                             <div class="col s2 right-align">
-                                <button id="submit" class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
+                                <button id="signupbutton" class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
                                     <i class="material-icons right">input</i>
                                 </button>
                             </div>
@@ -177,21 +191,16 @@
                 <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
             </div>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-                Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-            </div>
-        </div>
-    </footer>
+</body>
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="assets/css/materialize/js/materialize.js"></script>
-    <script src="assets/css/materialize/js/materialize.min.js""></script>
-</body>
-<script type="text/javascript">
-    // initialize modals
-    $(document).ready(function() {
-        $('.modal').modal();
-    });
-</script>
+    <script src="assets/css/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        // initialize modals
+        $(document).ready(function() {
+            $('.modal').modal();
+        });
+    </script>
+    <script src="../app/config/passport/auth.js"></script>
 </html>

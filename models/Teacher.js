@@ -1,72 +1,30 @@
-// Require mongoose
-var mongoose = require('mongoose');
+var db = require('../models');
 
-// Create a Schema class with mongoose
-var Schema = mongoose.Schema;
-
-
-var StudentSchema = new Schema({
-  student: {
+module.exports = function (sequelize, DataTypes) {
+  var Teacher = sequelize.define('Teacher', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     name: {
-      type: String, 
-      unique: true 
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
     email: {
-      type: String
+      type: DataTypes.STRING
     },
-    attendance: [{
-      date: [{
-        type: Date,
-        default: Date.now
-      }],
-      present: Boolean,
-      grades: [{
-        assignName: {
-          type: String,
-          unique: true,
-        },
-        grade: {
-          type: Number,
-          validate: {
-            validator: Number.isInteger,
-            message: `{VALUE} is not an integer value`
-          }
-        }
-      }]
-    }],
-  }
-})
-
-
-// initialize Classes Schema 
-var ClassSchema = new Schema({
-  class: {
-    name: {
-        type: String,
-        unique: true
-      },
-      students: [StudentSchema]
-  },
-});
-
-
-var TeacherSchema = new Schema({
-  teacher: {
-    name: {
-      type: String,
-      unique: true,
-    },
-    username: {
-      type: String,
-      unique: true,
-    },
-    classes: [ClassSchema]
-  }
-});
-
-
-var Teacher = mongoose.model("Teacher", TeacherSchema);
-
-
-module.exports = Teacher;
-
+    password: {
+      type: DataTypes.STRING
+    }
+  }, {
+    classMethods: {
+      associate: function (models) {
+        Teacher.hasMany(models.Students, {
+          onDelete: 'cascade'
+        })
+      }
+    }
+  })
+  return Teacher;
+}

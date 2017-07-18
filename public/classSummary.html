@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Teacher's Pet</title>
 
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Teacher's Pet</title>
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="assets/css/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="assets/css/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
-
+  <link href="assets/css/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="assets/css/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <!-- link to css stykesheet-->
-<!-- <link rel="stylesheet" href="assets/css/style.css">
- --><!-- Google Font -->
-<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="assets/css/style.css">
+ -->
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 </head>
+
 <body>
   <nav class="teal lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">Teacher's Pet</a>
@@ -27,9 +27,9 @@
     </div>
   </nav>
 
-
-  <!-- side bar -->
-  <ul id="slide-out" class="side-nav">
+  <!-- sidebar open button -->
+  <div class="row">
+      <ul id="slide-out" class="side-nav">
     <li><div class="user-view">
       <div class="background">
         <img src="images/office.jpg">
@@ -38,58 +38,157 @@
       <a href="#!name"><span class="white-text name">John Doe</span></a>
       <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
     </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>Take Attendance</a></li>
+    <li><a href="#!">Add Documents</a></li>
     <li><div class="divider"></div></li>
     <li><a class="subheader">Subheader</a></li>
     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
- <!-- ____end of sidebard code_____ -->
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i>Open Menu</a>
+  </div>
 
+  <div class="row">
+    <div class="col s11 m11">
+
+          <div class="card-panel white">
+          <table>
+          <thead>
+            <tr>
+              <th>Students who need extra help</th>
+            </tr>
+          </thead>
+          </table>
+
+      <div id="introduction" class="section scrollspy">
+
+      <!-- List of Students -->
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <img src="http://3.bp.blogspot.com/_43-LN1JjW2Y/SwzMVCD0cII/AAAAAAAAAFc/REDHArMqQaI/s320/susie.jpg" alt="" class="circle">
+          <p class="name">Henrietta Zoe</p>
+          <p class="email">henrietta@gmail.com
+            <p>
+            </p>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle">folder</i>
+          <p class="name">Jenny Lopez</p>
+          <p class="email">Jennyfromtheblock@yahoo.com</p>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle green">insert_chart</i>
+          <p class="name">Keila Ben</p>
+          <p class="email">Benkei@yahoo.com</p>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle red">play_arrow</i>
+          <p class="email">William Rogers</p>
+          <p class="email">Billy@yahoo.com</p>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle red">play_arrow</i>
+          <p class="email">William Rogers</p>
+          <p class="email">Billy@yahoo.com</p>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle red">play_arrow</i>
+          <p class="email">William Rogers</p>
+          <p class="email">Billy@yahoo.com</p>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle red">play_arrow</i>
+          <p class="email">William Rogers</p>
+          <p class="email">Billy@yahoo.com</p>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle red">play_arrow</i>
+          <p class="email">William Rogers</p>
+          <p class="email">Billy@yahoo.com</p>
+        </li>
+      </ul>
+      </div>
+      <!-- end of list of students code -->
+    </div>
+  </div>
+
+  </div>
+  <div class="row">
+    <!-- Panel with documents -->
+    <div class="col s5 m5">
+      <div class="card-panel white">
+        <table>
+          <thead>
+            <tr>
+              <th>Recent Documents</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Homework 1</td>
+            </tr>
+            <tr>
+              <td>Homework 2</td>
+            </tr>
+            <tr>
+              <td>Homework 3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- end of panel with documents code -->
+    <!-- Panel with annoucements -->
+    <div class="col s6 m6">
+      <div class="card-panel white">
+        <table>
+          <thead>
+            <tr>
+              <th>Upcoming Events</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Test On Friday</td>
+            </tr>
+            <tr>
+              <td>Quiz on Tuesday</td>
+            </tr>
+            <tr>
+              <td>Homework 3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- end of panel with announcements code -->
+  </div>
+  </div>
   <footer class="page-footer orange">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat./p>
-
-
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Settings</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
           </ul>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
         </div>
       </div>
     </div>
-
-             
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
   </footer>
-
-
   <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="assets/css/materialize/js/materialize.js"></script>
-    <script src="assets/css/materialize/js/materialize.min.js""></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="assets/css/materialize/js/materialize.js"></script>
+  <script src="assets/css/materialize/js/materialize.min.js" "></script>
 
   </body>
 </html>
@@ -98,7 +197,7 @@
 //-----------------Modal Code-----------------
 
   // Initialize collapse button
-  $(".button-collapse").sideNav();
+  $(".button-collapse ").sideNav();
   // Initialize collapsible (uncomment the line below if you use the dropdown variation)
   //$('.collapsible').collapsible();
         
@@ -107,4 +206,5 @@
 
 
 </script>
+
 
