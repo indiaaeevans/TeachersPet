@@ -23,6 +23,12 @@
     background-image: url('../images/banner.png');
 }
 
+#banner2 {
+    background-image: url('../images/classroom.png');
+    background-size: 100%;
+    background-position: center; 
+}
+
 .message-div {
     /*     background-color: rgba(231, 230, 230, .85);
  */
@@ -42,6 +48,15 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
 #login{
     padding-top: 10px;
     padding-bottom: 40px;
+}
+
+.take-attend{
+
+margin-top: 2%;
+margin-left: 2%;
+margin-bottom: 2%;
+
+
 }
 
 .extra-padding {
@@ -120,21 +135,22 @@ label {
 
 .card-panel{
     overflow-y: auto;
-    max-height: 300px;
+    max-height: 600px;
+    padding:  0px;
 }
 
 .edit-btn{
-    margin-left: 65%;
+    margin-left: 85%;
 }
 
-.student-edit-btn{
- margin-left: 80%;
+.student-add-btn{
+ margin-left: 90%;
 
 }
 
-.student-list-pnl{
 
-}
+
+
 /* navbar code */
 
 

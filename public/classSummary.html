@@ -12,8 +12,7 @@
   <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <!-- link to css stykesheet-->
   <!-- <link rel="stylesheet" href="assets/css/style.css">
- -->
-  <!-- Google Font -->
+   <!- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 </head>
 
@@ -21,31 +20,29 @@
   <nav class="teal lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">Teacher's Pet</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="#">Log Out</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
-  <!-- sidebar open button -->
-  <div class="row">
-      <ul id="slide-out" class="side-nav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="images/office.jpg">
-      </div>
-      <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#!name"><span class="white-text name">John Doe</span></a>
-      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>Take Attendance</a></li>
-    <li><a href="#!">Add Documents</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-  </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i>Open Menu</a>
-  </div>
+  <div class="section no-pad-bot" id="banner2">
+        <div class="container">
+            <br>
+            <br>
+            <div class="row center extra-padding">
+                <h5 class="header col s12 light"></h5>
+            </div>
+            <div class="row extra-padding center">
+            
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+
+
+  <a class="waves-effect waves-light btn take-attend"><i class="material-icons left">contacts</i>Take Attendance</a>
 
   <div class="row">
     <div class="col s12 m12 student-list-pnl">
@@ -54,7 +51,7 @@
           <table>
           <thead>
             <tr>
-              <th>Students<a class="waves-effect student-edit-btn orange lighten-3 btn">Edit</a></th>
+              <th>Students  <a class="btn-floating btn-tiny waves-effect waves-light orange lighten-3 student-add-btn"><i class="tiny material-icons">add</i></a></th>
             </tr>
           </thead>
           </table>
@@ -118,7 +115,7 @@
         <table>
           <thead>
             <tr>
-              <th>Documents<a class="waves-effect orange lighten-3 edit-btn btn">Edit</a></th>
+              <th>Documents<a class="btn-floating btn-tiny waves-effect waves-light orange lighten-3 student-add-btn"><i class="tiny material-icons">add</i></th>
             </tr>
           </thead>
           <tbody>
@@ -136,13 +133,15 @@
       </div>
     </div>
     <!-- end of panel with documents code -->
+
+
     <!-- Panel with annoucements -->
     <div class="col s6 m6">
       <div class="card-panel white">
         <table>
           <thead>
             <tr>
-              <th>Events<a class="waves-effect orange lighten-3 edit-btn btn">Edit</a></th>
+              <th>Events<a class="btn-floating btn-tiny waves-effect waves-light orange lighten-3 student-add-btn"><i class="tiny material-icons">add</i></th>
             </tr>
           </thead>
           <tbody>
@@ -161,8 +160,12 @@
     </div>
   </div>
   <!-- end of panel with announcements code -->
+
   </div>
   </div>
+
+
+
   <footer class="page-footer orange">
     <div class="container">
       <div class="row">
@@ -237,7 +240,6 @@
 </html>
 
 <script>
-//-----------------Modal Code-----------------
 
   // Initialize collapse button
   $(".button-collapse ").sideNav();
