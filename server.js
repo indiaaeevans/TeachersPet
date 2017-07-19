@@ -7,12 +7,14 @@ const methodOverride = require('method-override');
 // Authentication dependencies
 var passport = require('passport');
 var session = require('express-session');
+const fileUpload = require('express-fileupload'); 
 
 // Models
 var db = require("./models");
 
 // Initialize app method
 let app = express();
+
 // set PORT variable
 const PORT = process.env.PORT || 8080;
 
@@ -43,13 +45,17 @@ app.use(methodOverride('_method'));
 // Static directory
 app.use(express.static(path.join(__dirname, './public')));
 
-// ROUTES
+//Routes
+//=================================================
 require('./routes/htmlRoutes')(app);
 // require('./routes/awsRoutes')(app);
 // Authentication routes
 require('./routes/authRoutes.js')(app, passport);
 // load passport strategies
 require('./config/passport/passport.js')(passport, db.Teacher);
+require('./routes/upload')(app); 
+
+
 
 db.sequelize.sync({force: true}).then(function () {
   app.listen(PORT, function () {

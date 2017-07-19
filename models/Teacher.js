@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
       autoIncrement: true
     },
     name: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         isAlpha: true 
@@ -33,7 +33,7 @@ module.exports = function (sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function (models) {
-        Teacher.hasMany(models.Students)
+        Teacher.hasMany(models.Students); 
       }
     }
   })
