@@ -8,7 +8,7 @@ const methodOverride = require('method-override');
 var passport = require('passport');
 var session = require('express-session');
 
-// Models for user login (uses sequelize right now but we want to convert to mongodb)
+// Models
 var db = require("./models");
 
 // Initialize app method
@@ -45,13 +45,13 @@ app.use(express.static(path.join(__dirname, './public')));
 
 // ROUTES
 require('./routes/htmlRoutes')(app);
-require('./routes/awsRoutes')(app);
+// require('./routes/awsRoutes')(app);
 // Authentication routes
 require('./routes/authRoutes.js')(app, passport);
 // load passport strategies
-require('./app/config/passport/passport.js')(passport, db.Teacher);
+require('./config/passport/passport.js')(passport, db.Teacher);
 
-db.sequelize.sync().then(function () {
+db.sequelize.sync({force: true}).then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
