@@ -23,6 +23,12 @@
     background-image: url('../images/banner.png');
 }
 
+#banner2 {
+    background-image: url('../images/classroom.png');
+    background-size: 100%;
+    background-position: center; 
+}
+
 .message-div {
     /*     background-color: rgba(231, 230, 230, .85);
  */
@@ -42,6 +48,15 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
 #login{
     padding-top: 10px;
     padding-bottom: 40px;
+}
+
+.take-attend{
+
+margin-top: 2%;
+margin-left: 2%;
+margin-bottom: 2%;
+
+
 }
 
 .extra-padding {
@@ -101,23 +116,54 @@ label {
 }
 
 
+/* Summary Page */
+.name{
+    font-size: 12px;
+}
+
+.email{
+    font-size: 12px;
+}
+
+.collection .collection-item.avatar{
+    min-height: 50px;
+}
+
+.circle{
+    height: 50px;
+}
+
+.card-panel{
+    overflow-y: auto;
+    max-height: 600px;
+    padding:  0px;
+}
+
+.edit-btn{
+    margin-left: 85%;
+}
+
+.student-add-btn{
+ margin-left: 90%;
+
+}
+
+
+
+
+/* navbar code */
+
+
+
 /* media tags */
 
-@media screen and (min-width: 1025px) and (max-width: 1280px) {
-    .jumbotron {
-        height: 450px;
-    }
-    .message-div {
-        height: 250px;
-        margin-left: 10%;
-        margin-top: 5%;
-    }
-    .main-message {
-        margin-top: 20%;
-        font-size: 20px;
-        line-height: 125%;
-    }
-    .main-button {
-        margin-top: 30px;
-    }
+/* @media screen and (min-width: 1645px)s {
+.edit-btn{
+    margin-left: 80%;
 }
+
+.student-edit-btn{
+ margin-left: 90%;
+
+}
+} */
