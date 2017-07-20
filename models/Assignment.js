@@ -15,6 +15,6 @@ module.exports = function (sequelize, DataTypes) {
        Assignments.belongsTo(models.Students); 
       }
     }
-  })
+  }); 
   return Assignments;
 }
