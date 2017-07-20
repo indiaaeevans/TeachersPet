@@ -1,5 +1,3 @@
-var db = require('../models'); 
-
 module.exports = function(sequelize, DataTypes) {
   var Attendance = sequelize.define('Attendance', {
     Date: {
@@ -16,12 +14,9 @@ module.exports = function(sequelize, DataTypes) {
         if (value === 'false') value = false; 
       }
     }
-  }, {
-    classMethods: {
-      associate: function(models) {
-        Attendance.belongsTo(models.Students); 
-      }
-    }
   }); 
+  Attendance.associate = function(models) {
+    Attendance.belongsTo(models.Students); 
+  }
   return Attendance; 
 }
