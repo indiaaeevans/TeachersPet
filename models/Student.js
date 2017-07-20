@@ -1,5 +1,3 @@
-var db = require('../models'); 
-
 module.exports = function(sequelize, DataTypes) {
   var Students = sequelize.define('Students', {
     name: {
@@ -16,14 +14,11 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true, 
       }
     }
-  }, {
-    classMethods: {
-      associate: function(models) {
-        Students.belongsTo(models.Teacher); 
-        Students.hasMany(models.Assignments); 
-        Students.hasMany(models.Attendance); 
-      }
-    }
-  }); 
+  });
+  Students.associate = function(models) {
+    Students.belongsTo(models.Teacher); 
+    Students.hasMany(models.Assignments); 
+    Students.hasMany(models.Attendance); 
+  }
   return Students; 
 }

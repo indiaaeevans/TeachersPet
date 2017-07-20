@@ -1,5 +1,3 @@
-var db = require('../models');
-
 module.exports = function (sequelize, DataTypes) {
   var Assignments = sequelize.define('Assignments', {
     assignName: {
@@ -8,13 +6,10 @@ module.exports = function (sequelize, DataTypes) {
         isAlpha: true 
       }
     },
-  }, {
-    classMethods: {
-      associate: function (models) {
-       Assignment.hasMany(models.Grades); 
-       Assignments.belongsTo(models.Students); 
-      }
-    }
-  })
+  }); 
+  Assignments.associate = function(models) {
+    Assignments.belongsTo(models.Students); 
+    Assignments.hasMany(models.Grades); 
+  }
   return Assignments;
 }
