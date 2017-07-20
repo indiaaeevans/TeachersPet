@@ -36,6 +36,11 @@ module.exports = function (app) {
 
   app.post('/api/upload', function (req, res) {
     console.log(req.files);
+    /* img/pdf must be sent from client with associated "img" key 
+    example: {
+          img: 'img-file' 
+      }
+    */
     sendFileToAmazon(req.files.img);
     res.status(200).send('Image was successfully sent to AWS');
   });

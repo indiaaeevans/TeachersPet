@@ -1,17 +1,10 @@
-var db = require('../models');
-
 module.exports = function (sequelize, DataTypes) {
   var Teacher = sequelize.define('Teacher', {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
-    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isAlpha: true 
+        isAlpha: true
       }
     },
     email: {
@@ -24,18 +17,15 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
     },
     last_login: {
-        type: DataTypes.DATE
+      type: DataTypes.DATE
     },
     status: {
-        type: DataTypes.ENUM('active', 'inactive'),
-        defaultValue: 'active'
+      type: DataTypes.ENUM('active', 'inactive'),
+      defaultValue: 'active'
     }
-  }, {
-    classMethods: {
-      associate: function (models) {
-        Teacher.hasMany(models.Students); 
-      }
-    }
-  })
+  }); 
+  Teacher.associate = function(models) {
+    Teacher.hasMany(models.Students); 
+  }
   return Teacher;
 }
