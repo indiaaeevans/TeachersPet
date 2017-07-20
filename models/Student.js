@@ -19,7 +19,11 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Students.belongsTo(models.Teacher); 
+        Students.belongsTo(models.Teacher, {
+                        foreignKey: {
+                            allowNull: false
+                        }
+        });                        
         Students.hasMany(models.Assignments); 
         Students.hasMany(models.Attendance); 
       }
