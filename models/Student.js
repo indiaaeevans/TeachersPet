@@ -14,6 +14,7 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true, 
       }
     }
+
   });
   Students.associate = function(models) {
     Students.belongsTo(models.Teacher); 
