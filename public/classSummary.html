@@ -17,6 +17,7 @@
 </head>
 
 <body>
+  <!--NAV BAR  -->
   <nav class="teal lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">Teacher's Pet</a>
       <ul class="right hide-on-med-and-down">
@@ -34,20 +35,34 @@
         <h5 class="header col s12 light"></h5>
       </div>
       <div class="row extra-padding center">
-
       </div>
       <br>
       <br>
     </div>
   </div>
 
-
-  <a class="waves-effect waves-light btn take-attend"><i class="material-icons left">contacts</i>Take Attendance</a>
+<div class="container">
+<!-- MENU OF OPTIONS  -->
+  <div class="row">
+    <div class="col s3">
+      <a class="waves-effect waves-light btn teacher-menu"><i class="material-icons left">contacts</i>Attendance</a>
+    </div>
+    <div class="col s3">
+      <a class="waves-effect waves-light btn teacher-menu"><i class="material-icons left">attachment</i>Documents</a>
+    </div>
+    <div class="col s3">
+      <a class="waves-effect waves-light btn teacher-menu"><i class="material-icons left">assignment_turned_in</i>Grades</a>
+    </div>
+    <div class="col s3">
+      <a class="waves-effect waves-light btn teacher-menu"><i class="material-icons left">event_note</i>Schedule</a>
+    </div>
+  </div>
 
   <div class="row">
-    <div class="col s12 m12 student-list-pnl">
+    <div class="col s12 student-list-pnl">
 
       <div class="card-panel white">
+
         <table>
           <thead>
             <tr>
@@ -55,7 +70,6 @@
             </tr>
           </thead>
         </table>
-
 
         <!-- List of Students -->
         <ul class="collection">
@@ -110,14 +124,14 @@
             <p class="email">Billy@yahoo.com</p>
           </li>
         </ul>
-        <!-- end of list of students code -->
-      </div>
-    </div>
+        
+      </div><!-- end of panel -->
+    </div><!-- end of column -->
+  </div><!-- end of row -->
 
-  </div>
   <div class="row">
+    <div class="col s6">
     <!-- Panel with documents -->
-    <div class="col s6 m6">
       <div class="card-panel white">
         <table>
           <thead>
@@ -143,7 +157,7 @@
 
 
     <!-- Panel with annoucements -->
-    <div class="col s6 m6">
+    <div class="col s6">
       <div class="card-panel white">
         <table>
           <thead>
@@ -164,13 +178,12 @@
           </tbody>
         </table>
       </div>
-    </div>
   </div>
   <!-- end of panel with announcements code -->
-
+</div>
   </div>
   </div>
-
+</div>
 
 
   <footer class="page-footer orange">
@@ -242,21 +255,15 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="assets/css/materialize/js/materialize.js"></script>
     <script src="assets/css/materialize/js/materialize.min.js"></script>
-    <script>
-
-      // Initialize collapse button
-      $(".button-collapse ").sideNav();
+    <script type="text/javascript">
       
-      // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-      //$('.collapsible').collapsible();
-
-      // Show sideNav
-      $('.button-collapse').sideNav('hide');
-
-
-      // initialize modals
       $(document).ready(function () {
+        // initialize modals
         $('.modal').modal();
+        // Initialize collapse button
+        $(".button-collapse ").sideNav();
+        // Show sideNav
+        $('.button-collapse').sideNav('hide');
       });
 
     </script>
