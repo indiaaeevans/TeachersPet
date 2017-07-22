@@ -5,11 +5,11 @@ module.exports = function (app, passport) {
 
   // These bring us to the main page with modals for sign up / sign in
   app.get('/signup', function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   app.get('/signin', function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   // When new user signs up we will take them to main menu 
@@ -21,7 +21,27 @@ module.exports = function (app, passport) {
 
   // only authenticated users should see menu
   app.get('/menu', isLoggedIn, function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/menu.html"));
+    res.sendFile(path.join(__dirname, "../public/classSummary.html"));
+  });
+
+  // only authenticated users should see assignments
+  app.get('/assignments', isLoggedIn, function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/assignments.html"));
+  });
+
+  // only authenticated users should see attendance
+  app.get('/attendance', isLoggedIn, function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/attendance.html"));
+  });
+
+    // only authenticated users should see schedule
+  app.get('/schedule', isLoggedIn, function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/schedule.html"));
+  });
+
+    // only authenticated users should see documents
+  app.get('/documents', isLoggedIn, function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/documents.html"));
   });
 
   // when user logs out, destory the session and redirect to home
