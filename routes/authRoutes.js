@@ -5,23 +5,43 @@ module.exports = function (app, passport) {
 
   // These bring us to the main page with modals for sign up / sign in
   app.get('/signup', function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   app.get('/signin', function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  // When new user signs up we will take them to main menu 
+  // When new user signs up we will take them to class summary 
   // (redirect to sign up form if fails)
   app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect: '/menu',
+    successRedirect: '/class',
     failureRedirect: '/signup'
   }));
 
-  // only authenticated users should see menu
-  app.get('/menu', isLoggedIn, function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/menu.html"));
+  // only authenticated users should see class summary
+  app.get('/class', isLoggedIn, function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/classSummary.html"));
+  });
+
+  // only authenticated users should see assignments
+  app.get('/assignments', isLoggedIn, function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/assignments.html"));
+  });
+
+  // only authenticated users should see attendance
+  app.get('/attendance', isLoggedIn, function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/attendance.html"));
+  });
+
+    // only authenticated users should see schedule
+  app.get('/schedule', isLoggedIn, function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/schedule.html"));
+  });
+
+    // only authenticated users should see documents
+  app.get('/documents', isLoggedIn, function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/documents.html"));
   });
 
   // when user logs out, destory the session and redirect to home
@@ -31,10 +51,10 @@ module.exports = function (app, passport) {
     });
   });
 
-  // When existing user signs in take them to main menu
+  // When existing user signs in take them to class summary
   // (redirect to sign-in form if fails)
   app.post('/signin', passport.authenticate('local-signin', {
-    successRedirect: '/menu',
+    successRedirect: '/class',
     failureRedirect: '/signin'
   }));
 
@@ -52,7 +72,7 @@ module.exports = function (app, passport) {
     }
   });
 
-  // custom middleware to protect menu route
+  // custom middleware to protect routes after logging in
   function isLoggedIn(req, res, next) {
 
     if (req.isAuthenticated())
