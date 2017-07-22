@@ -19,6 +19,18 @@
     background-repeat: no-repeat;
 }
 
+.page-titles{
+    color: #000;
+    font-weight: bold;
+    width: 250px;
+    font-size: 30px;
+    border-style: solid;
+    text-align: center;
+    padding-right: 0px;
+}
+
+
+
 #index-banner {
     background-image: url('../images/banner.png');
 }
@@ -137,11 +149,11 @@ label {
 }
 
 .edit-btn{
-    margin-left: 85%;
+    margin-left: 80%;
 }
 
 .student-add-btn{
- margin-left: 90%;
+ margin-left: 80%;
 
 }
 

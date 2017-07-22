@@ -52,6 +52,11 @@ require('./routes/htmlRoutes')(app);
 require('./routes/authRoutes.js')(app, passport);
 // load passport strategies
 require('./config/passport/passport.js')(passport, db.Teacher);
+
+// load passport strategies
+require('./routes/student-api-routes.js')(app);
+
+
 //load amazon web service route 
 // require('./routes/upload')(app);
 

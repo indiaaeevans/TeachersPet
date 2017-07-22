@@ -5,11 +5,11 @@ module.exports = function (app, passport) {
 
   // These bring us to the main page with modals for sign up / sign in
   app.get('/signup', function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+    res.sendFile(path.join(__dirname, "../public/classSummary.html"));
   });
 
   app.get('/signin', function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+    res.sendFile(path.join(__dirname, "../public/classSummary.html"));
   });
 
   // When new user signs up we will take them to main menu 
