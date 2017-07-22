@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 var passport = require('passport');
 var session = require('express-session');
 const fileUpload = require('express-fileupload');
+require("node-jsx").install(); 
 
 // Models
 var db = require("./models");
@@ -17,6 +18,9 @@ let app = express();
 
 // set PORT variable
 const PORT = process.env.PORT || 8080;
+
+//Static directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -41,9 +45,6 @@ app.use(bodyParser.json());
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride('_method'));
-
-// Static directory
-app.use(express.static(path.join(__dirname, './public')));
 
 //Routes
 //=================================================
