@@ -25,15 +25,35 @@
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-<br>
-<br>
 
-<table class="highlight">
+      <!-- BANNER / IMAGE  -->
+    <div class="section no-pad-bot" id="banner2">
+        <div class="container">
+        <br>
+        <br>
+        <div class="row center extra-padding">
+            <h5 class="header col s12 light"></h5>
+        </div>
+        <div class="row extra-padding center">
+        </div>
+        <br>
+        <br>
+        </div>
+    </div>
+<br>
+<br>
+<div class="container">
+              <div class="row">
+                <div class="col s10">
+                    <h4>Attendance</h4>
+                </div>
+            </div>
+  <table class="highlight">
         <thead>
           <tr>
               <th>First Name</th>
               <th>Last Name</th>
-              <th>Attendence</th>
+              <th>Attendance</th>
           </tr>
         </thead>
 
@@ -44,9 +64,9 @@
             <td label>Attendance Status</label>
                 <select class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Present</option>
+                    <option value="true">Present</option>
                     <option value="2">Tardy</option>
-                    <option value="3">Not Here</option>
+                    <option value="false">Not Here</option>
                 </select>
             </td>
           </tr>
@@ -56,9 +76,9 @@
             <td label>Attendance Status</label>
                 <select class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Present</option>
-                    <option value="2">Tardy</option>
-                    <option value="3">Not Here</option>
+                    <option value="true">Present</option>
+                    <option value="true">Tardy</option>
+                    <option value="false">Not Here</option>
                 </select>
             </td>
         </tr>    
@@ -68,9 +88,9 @@
             <td label>Attendance Status</label>
                 <select class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Present</option>
-                    <option value="2">Tardy</option>
-                    <option value="3">Not Here</option>
+                    <option value="true">Present</option>
+                    <option value="true">Tardy</option>
+                    <option value="false">Not Here</option>
                 </select>
             </td>
           </tr>
@@ -80,9 +100,9 @@
             <td label>Attendance Status</label>
                 <select class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Present</option>
-                    <option value="2">Tardy</option>
-                    <option value="3">Not Here</option>
+                    <option value="true">Present</option>
+                    <option value="true">Tardy</option>
+                    <option value="false">Not Here</option>
                 </select>
             </td>
           </tr>
@@ -92,9 +112,9 @@
             <td label>Attendance Status</label>
                 <select class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Present</option>
-                    <option value="2">Tardy</option>
-                    <option value="3">Not Here</option>
+                    <option value="true">Present</option>
+                    <option value="true">Tardy</option>
+                    <option value="false">Not Here</option>
                 </select>
             </td>
           </tr>
@@ -104,9 +124,9 @@
             <td label>Attendance Status</label>
                 <select class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Present</option>
-                    <option value="2">Tardy</option>
-                    <option value="3">Not Here</option>
+                    <option value="true">Present</option>
+                    <option value="true">Tardy</option>
+                    <option value="false">Not Here</option>
                 </select>
             </td>
           </tr>
@@ -116,9 +136,9 @@
             <td label>Attendance Status</label>
                 <select class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Present</option>
-                    <option value="2">Tardy</option>
-                    <option value="3">Not Here</option>
+                    <option value="true">Present</option>
+                    <option value="true">Tardy</option>
+                    <option value="false">Not Here</option>
                 </select>
             </td>
           </tr>
@@ -128,9 +148,9 @@
             <td label>Attendance Status</label>
                 <select class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Present</option>
-                    <option value="2">Tardy</option>
-                    <option value="3">Not Here</option>
+                    <option value="true">Present</option>
+                    <option value="true">Tardy</option>
+                    <option value="false">Not Here</option>
                 </select>
             </td>
           </tr>
@@ -140,48 +160,23 @@
             <td label>Attendance Status</label>
                 <select class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Present</option>
-                    <option value="2">Tardy</option>
-                    <option value="3">Not Here</option>
+                    <option value="true">Present</option>
+                    <option value="true">Tardy</option>
+                    <option value="false">Not Here</option>
                 </select>
             </td>
           </tr> 
         </tbody>
       </table>
-  <hr>          
-
-  <div id="myform">
-    <h3>Add Student</h3>
-    <table>
-      <tr>
-        <td>Name:</td>
-        <td><input type="text" id="name"></td>
-      </tr>
-      <tr>
-        <td>Attendence:</td>
-        <td><input type="text" id="attend">
-          <input type="button" id="add" value="Add" onclick="Javascript:addRow()"></td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-    </table>
-  </div>
-  <div id="mydata">
-    <b>Current data in the system ...</b>
-    <table id="myTableData" border="1" cellpadding="2">
-      <tr>
-        <td>&nbsp;</td>
-        <td><b>Name</b></td>
-        <td><b>Attendance</b></td>
-      </tr>
-    </table>
-    &nbsp;<br/>
-  </div>
+  <hr>  
+  
+  <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+  
+</div>
 
 
-  </div>
 </body> 
 
 </html>
