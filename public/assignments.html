@@ -58,8 +58,8 @@
             </div>
             <div class="row">
                 <div class="col s12">
-                    <button class="btn waves-effect waves-light right" type="submit" name="action">Save
-                        <i class="material-icons right">send</i>
+                    <button id="save-assignment" class="btn waves-effect waves-light right" type="submit" name="action">Save
+                        <i class="material-icons right">save</i>
                     </button>
                 </div>
             </div>
@@ -104,6 +104,45 @@
         $('select').material_select();
       });
 
+    var userLoggedInId = "";
+    var userLoggedInName = "";
+    
+    $.get("/api/user_data").then(function(data) {
+      userLoggedInId = data.id;
+      userLoggedInName = data.name;
+    });
+
+    // Submits new assignment to the database
+    function saveAssignment(assignment) {
+        $.post("/api/assignments", assignment, function() { 
+
+        });
+
+        location.href = "/assignments";
+    }
+            
+    $("#save-assignment").on("click", function(event) {
+
+        event.preventDefault();
+
+        var name = $("#assignment-name").val().trim();
+
+        var userEntered = userLoggedInId;
+
+        // This checks to make sure these fields are not empty
+         if (!name) {
+            $(".alertUser").text("Please enter an assignment name.");
+            return;
+        } 
+
+        //Create a new object to go into the database
+        var newAssignment = {
+            name: name,
+            UserId: userLoggedInId
+        };
+
+        saveAssignment(newAssignment);
+    });
     </script>
 </body>
 
