@@ -55,91 +55,92 @@ require('./config/passport/passport.js')(passport, db.Teacher);
 //load amazon web service route 
 // require('./routes/upload')(app);
 
+  // DEV ONLY!!: 
+  // use code below to force true if prevented by sequelize error 
+  // db
+  //   .sequelize
+  //   .query('SET FOREIGN_KEY_CHECKS = 0', null, {raw: true})
+  //   .then(function(results) {
+  //       db.sequelize.sync({force: true}); 
+  //   }); 
 
 db.sequelize.sync({force: true}).then(function () {
 
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
-    // db.Teacher.create({
-    //   name: 'Jen',
-    //   email: 'jen@testteacher.com',
-    //   password: 'testpass',
-    // }).then(function (teacher) {
-    //   console.log(teacher);
-    //   db.Students.bulkCreate([
-    //     {
-    //     name: 'Eyad',
-    //     email: 'eyad@unc.edu',
-    //     TeacherId: 1
-    //   }, 
-    //   {
-    //     name: 'Henrietta',
-    //     email: 'henrietta@unc.edu',
-    //     TeacherId: 1
-    //   },
-    //   {
-    //     name: 'India',
-    //     email: 'india@unc.edu',
-    //     TeacherId: 1
-    //   },
-    //   {
-    //     name: 'Brittni',
-    //     email: 'brittni@unc.edu',
-    //     TeacherId: 1
-    //   }
-    // ]).then(function (student) {
-    //     console.log(student);
-    //     db.Assignments.bulkCreate([
-    //       {
-    //       assignName: 'TechnicalInterview',
-    //       StudentId: 1
-    //     },
-    //     {
-    //       assignName: 'TechnicalInterview',
-    //       StudentId: 2
-    //     },
-    //     {
-    //       assignName: 'TechnicalInterview',
-    //       StudentId: 3
-    //     },
-    //     {
-    //       assignName: 'TechnicalInterview',
-    //       StudentId: 4
-    //     }
-    //     ]).then(function (student) {
-    //       console.log(student);
-    //       db.Grades.bulkCreate([
-    //         {
-    //         grade: 81,
-    //         AssignmentId: 1
-    //        },
-    //       {
-    //         grade: 101,
-    //         AssignmentId: 2
-    //       },
-    //       {
-    //         grade: 86,
-    //         AssignmentId: 3
-    //       },
-    //       {
-    //         grade: 91,
-    //         AssignmentId: 4
-    //       }
-    //       ]).then(function (value) {
-    //         console.log(value);
-    //         db.Students.findAll({
-    //           include: [{
-    //             model: db.Assignments,
-    //             include: [db.Grades]
-    //           }],
-    //           raw: true
-    //         }).then(function (student) {
-    //           console.log(student);
-    //         }); 
-    //       });
-    //     }); 
-    //   });
-    // }); 
+    db.Teacher.create({
+      name: 'Jen',
+      email: 'jen@testteacher.com',
+      password: 'testpass',
+    }).then(function (teacher) {
+      console.log(teacher);
+      db.Students.bulkCreate([
+        {
+        name: 'Eyad',
+        email: 'eyad@unc.edu',
+        TeacherId: 1
+      }, 
+      {
+        name: 'Henrietta',
+        email: 'henrietta@unc.edu',
+        TeacherId: 1
+      },
+      {
+        name: 'India',
+        email: 'india@unc.edu',
+        TeacherId: 1
+      },
+      {
+        name: 'Brittni',
+        email: 'brittni@unc.edu',
+        TeacherId: 1
+      }
+    ]).then(function (student) {
+        console.log(student);
+        db.Assignments.bulkCreate([
+          {
+           assignName: 'TechnicalInterview',
+          }
+        ]).then(function (student) {
+          console.log(student);
+          db.Grades.bulkCreate([
+            {
+            grade: 81,
+            AssignmentId: 1, 
+            StudentId: 1, 
+           },
+          {
+            grade: 101,
+            AssignmentId: 1,
+            StudentId: 2,
+          },
+          {
+            grade: 86,
+            AssignmentId: 1,
+            StudentId: 3, 
+          },
+          {
+            grade: 91,
+            AssignmentId: 1,
+            StudentId: 4
+          }
+          ]).then(function (value) {
+            console.log(value);
+            db.Students.findAll({
+              include: [{
+                model: db.Grades,
+                include: [{
+                  model: db.Assignments
+                }]
+              }],
+              raw: true
+            }).then(function (student) {
+              console.log(student);
+            }); 
+          });
+        }); 
+      });
+    }); 
 
   });
 });
