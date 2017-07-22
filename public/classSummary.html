@@ -32,16 +32,16 @@
         <!-- MENU OF OPTIONS  -->
         <div class="row">
           <div class="col s3">
-            <a class="waves-effect waves-light btn teacher-menu"><i class="material-icons left">contacts</i>Attendance</a>
+            <a href="/class" class="waves-effect waves-light btn teacher-menu"><i class="material-icons left">event_note</i>Roster</a>
           </div>
           <div class="col s3">
-            <a class="waves-effect waves-light btn teacher-menu"><i class="material-icons left">attachment</i>Documents</a>
+            <a href="/attendance" class="waves-effect waves-light btn teacher-menu"><i class="material-icons left">contacts</i>Attendance</a>
           </div>
           <div class="col s3">
-            <a class="waves-effect waves-light btn teacher-menu"><i class="material-icons left">assignment_turned_in</i>Grades</a>
+            <a href="/documents" class="waves-effect waves-light btn teacher-menu"><i class="material-icons left">attachment</i>Documents</a>
           </div>
           <div class="col s3">
-            <a class="waves-effect waves-light btn teacher-menu"><i class="material-icons left">event_note</i>Schedule</a>
+            <a href="/documents" class="waves-effect waves-light btn teacher-menu"><i class="material-icons left"></i>Assignments</a>
           </div>
         </div>
         <div class="row">
@@ -215,60 +215,56 @@
             </div>
           </div>
           <!-- end of student modal code -->
-
           <!-- Modal for Adding Student -->
-        <div id="add-student-modal" class="modal modal-fixed-footer">
+          <div id="add-student-modal" class="modal modal-fixed-footer">
             <div class="modal-content">
-                <h4>New Student</h4>
-                <!-- FORM INPUT -->
-                <div class="row">
-                    <form class="col s12" id="signup" name="signup" method="post" action="/signup">
-                        <!--First Name-->
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input name="first-name" id="first-name" type="text" class="validate newuser"></input>
-                                <label for="first-name">First Name:</label>
-                            </div>
-                        </div>     
-                          <!--Last Name-->
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input name="last-name" id="last-name" type="text" class="validate newuser"></input>
-                                <label for="last-name">Last Name:</label>
-                            </div>
-                        </div>                      
-                        <!--Email-->
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input name="email" id="email" type="email" class="validate newuser"></input>
-                                <label for="email">Email:</label>
-                            </div>
-                        </div>
-                        <!--Password-->
-                        <div class="row">
-                            
-                            <!-- FORM SUBMIT BUTTON-->
-                            <div class="col s2 right-align">
-                                <button id="add-student-btn" class="btn waves-effect waves-light blue lighten-1" type="submit" value="Sign Up">Add
-                                    <i class="material-icons right">input</i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+              <h4>New Student</h4>
+              <!-- FORM INPUT -->
+              <div class="row">
+                <form class="col s12" id="signup" name="signup" method="post" action="/signup">
+                  <!--First Name-->
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input name="first-name" id="first-name" type="text" class="validate newuser"></input>
+                      <label for="first-name">First Name:</label>
+                    </div>
+                  </div>
+                  <!--Last Name-->
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input name="last-name" id="last-name" type="text" class="validate newuser"></input>
+                      <label for="last-name">Last Name:</label>
+                    </div>
+                  </div>
+                  <!--Email-->
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input name="email" id="email" type="email" class="validate newuser"></input>
+                      <label for="email">Email:</label>
+                    </div>
+                  </div>
+                  <!--Password-->
+                  <div class="row">
+                    <!-- FORM SUBMIT BUTTON-->
+                    <div class="col s2 right-align">
+                      <button id="add-student-btn" class="btn waves-effect waves-light blue lighten-1" type="submit" value="Sign Up">Add
+                        <i class="material-icons right">input</i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
             </div>
-        </div>
-  
+          </div>
 </body>
 <!--  Scripts-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="assets/css/materialize/js/materialize.js"></script>
 <script src="assets/css/materialize/js/materialize.min.js"></script>
 <script src="/assets/js/student.js" type="text/javascript"></script>
-
 <script type="text/javascript">
 // initialize modals
 $(document).ready(function() {
