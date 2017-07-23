@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 var passport = require('passport');
 var session = require('express-session');
 const fileUpload = require('express-fileupload');
+require("node-jsx").install(); 
 
 // Models
 var db = require("./models");
@@ -17,6 +18,9 @@ let app = express();
 
 // set PORT variable
 const PORT = process.env.PORT || 8080;
+
+//Static directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -42,9 +46,6 @@ app.use(bodyParser.json());
 // Override with POST having ?_method=DELETE
 app.use(methodOverride('_method'));
 
-// Static directory
-app.use(express.static(path.join(__dirname, './public')));
-
 //Routes
 //=================================================
 require('./routes/htmlRoutes')(app);
@@ -55,8 +56,17 @@ require('./config/passport/passport.js')(passport, db.Teacher);
 //load amazon web service route 
 // require('./routes/upload')(app);
 
+  // DEV ONLY!!: 
+  // use code below to force true if prevented by sequelize error 
+  // db
+  //   .sequelize
+  //   .query('SET FOREIGN_KEY_CHECKS = 0', null, {raw: true})
+  //   .then(function(results) {
+  //       db.sequelize.sync({force: true}); 
+  //   }); 
 
 db.sequelize.sync({force: true}).then(function () {
+
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
     db.Teacher.create({
@@ -90,60 +100,48 @@ db.sequelize.sync({force: true}).then(function () {
         console.log(student);
         db.Assignments.bulkCreate([
           {
-          assignName: 'TechnicalInterview',
-          StudentId: 1
-        },
-        {
-          assignName: 'TechnicalInterview',
-          StudentId: 2
-        },
-        {
-          assignName: 'TechnicalInterview',
-          StudentId: 3
-        },
-        {
-          assignName: 'TechnicalInterview',
-          StudentId: 4
-        }
+           assignName: 'TechnicalInterview',
+          }
         ]).then(function (student) {
           console.log(student);
           db.Grades.bulkCreate([
             {
             grade: 81,
-            AssignmentId: 1
+            AssignmentId: 1, 
+            StudentId: 1, 
            },
           {
             grade: 101,
-            AssignmentId: 2
+            AssignmentId: 1,
+            StudentId: 2,
           },
           {
             grade: 86,
-            AssignmentId: 3
+            AssignmentId: 1,
+            StudentId: 3, 
           },
           {
             grade: 91,
-            AssignmentId: 4
+            AssignmentId: 1,
+            StudentId: 4
           }
           ]).then(function (value) {
             console.log(value);
-
             db.Students.findAll({
               include: [{
-                model: db.Assignments,
-                include: [db.Grades]
+                model: db.Grades,
+                include: [{
+                  model: db.Assignments
+                }]
               }],
               raw: true
             }).then(function (student) {
               console.log(student);
-            })
+            }); 
           });
-
-        })
-
+        }); 
       });
-
-    })
-
+    }); 
 
   });
 });

@@ -6,6 +6,7 @@ module.exports = function (sequelize, DataTypes) {
   }); 
   Grades.associate = function(models) {
     Grades.belongsTo(models.Assignments); 
+    Grades.belongsTo(models.Students); 
   }
   return Grades;
 }

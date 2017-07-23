@@ -13,6 +13,14 @@ module.exports = function(sequelize, DataTypes) {
         if (value === 'true') value = true; 
         if (value === 'false') value = false; 
       }
+    },
+    Tardy: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false, 
+      set: function(value) {
+        if (value === 'true') value = true; 
+        if (value === 'false') value = false; 
+      }
     }
   }); 
   Attendance.associate = function(models) {
