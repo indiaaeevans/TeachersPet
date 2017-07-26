@@ -9,14 +9,16 @@ module.exports = function (app) {
 
     db.Students.findAll({
       include: [{
-        model: db.Assignments,
-        include: [db.Grades]
+        model: db.Grades,
+        include: [{
+          model: db.Assignments
+        }]
       }],
       raw: true
-    }).then(function (students) {
-      res.json(students);
+    }).then(function (student) {
+      res.json(student);
     });
-
+  
   });
 
   app.post('/api/students', function (req, res) {
@@ -34,6 +36,20 @@ module.exports = function (app) {
 
     //   res.json(students);
     // });
+  });
+
+  //route for retrieving all assignments
+  app.get("/api/assignments", function(req, res) {
+    db.Assignment.findAll({ }).then(function(results) { 
+        res.json(results);
+    });
+  });
+
+  // route for saving a new assignment
+  app.post("/api/assignments", function(req, res){
+    db.Assignment.create({
+      assignName: req.body.assignName
+    });
   });
 
 }

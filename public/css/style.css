@@ -141,15 +141,18 @@ label {
 }
 
 .student-add-btn{
- margin-left: 90%;
+    margin-left: 90%;
 
 }
 
+#list {
+    margin-bottom: 0;
+}
 
-
-
-/* navbar code */
-
+#allAssignments {
+    position: relative;
+    top: 20px;
+}
 
 
 /* media tags */

@@ -23,69 +23,59 @@
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
     </nav>
+    
+    <div class="container">
+        <!-- PAGE HEADER  -->
+        <div class="row">
+            <div class="col s10">
+                <h4>Assignments</h4>
+            </div>
+        </div>
 
-    <!-- BANNER / IMAGE  -->
-    <div class="section no-pad-bot" id="banner2">
-        <div class="container">
-        <br>
-        <br>
-        <div class="row center extra-padding">
-            <h5 class="header col s12 light"></h5>
-        </div>
-        <div class="row extra-padding center">
-        </div>
-        <br>
-        <br>
+        <!-- HORIZONTAL RULE  -->
+        <hr class="style17">
+
+        <div class="row">
+            <!--COLUMN 1  -->
+            <form class="col s6">
+                <div class="row">
+                    <div class="col s12">
+                        <h5>New Assignment</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Geography HW1" id="ssignment-name" type="text" class="validate">
+                        <label for="assignment-name">Assignment Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <button id="save-assignment" class="btn waves-effect waves-light right" type="submit" name="action">Save
+                            <i class="material-icons right">save</i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <!-- COLUMN 2  -->
+            <div class="col s5 offset-s1">
+                <div class="row">
+                    <div class="col s12">
+                        <h5>Saved Assignments</h5>
+                    </div>
+                </div>
+                <div class="row" id="list">
+                    <div class="col s12">
+                        <ul id="allAssignments">
+                            <li>example</li>
+                            <li>example</li>
+                        </ul>
+                    </div>
+                </div>            
+            </div>
+
         </div>
     </div>
-    <br>
-    <br>
-
-<div class="container">
-    <div class="row">
-        <!--COLUMN 1  -->
-        <form class="col s6">
-            <div class="row">
-                <div class="col s12">
-                    <h5>New Assignment</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input placeholder="Geography HW1" id="ssignment-name" type="text" class="validate">
-                    <label for="assignment-name">Assignment Name</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <button id="save-assignment" class="btn waves-effect waves-light right" type="submit" name="action">Save
-                        <i class="material-icons right">save</i>
-                    </button>
-                </div>
-            </div>
-        </form>
-        <!-- COLUMN 2  -->
-        <div class="col s5 offset-s1">
-            <div class="row">
-                <div class="col s12">
-                    <h5>Existing Assignments</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <ul>
-                        <li>example</li>
-                        <li>example</li>
-                        <li>example</li>
-                        <li>example</li>
-                        <li>example</li>
-                    </ul>
-                </div>
-            </div>            
-        </div>
-
-    </div>
-</div>
 
 <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -93,7 +83,7 @@
     <script src="assets/css/materialize/js/materialize.min.js"></script>
     <script type="text/javascript">
       
-      $(document).ready(function () {
+    $(document).ready(function () {
         // initialize modals
         $('.modal').modal();
         // Initialize collapse button
@@ -102,45 +92,51 @@
         $('.button-collapse').sideNav('hide');
         // form select
         $('select').material_select();
-      });
-
-    var userLoggedInId = "";
-    var userLoggedInName = "";
-    
-    $.get("/api/user_data").then(function(data) {
-      userLoggedInId = data.id;
-      userLoggedInName = data.name;
     });
 
+    var assignmentList = [];
+    var listItem = $("<li>");
+
+    $.get("/api/assignments").then(function(data){
+        // show already saved assignments on the page
+        for (var i = 0; i < data.length; i++) {
+            listItem.text(data[i].assignName);
+            $("#allAssignments").append(listItem);
+            // assignmentList.push(data[i].assignName);
+        }
+    });
+
+    function getTeacher() {
+        var userLoggedInId = "";
+        var userLoggedInName = "";
+        
+        $.get("/api/teacher_data").then(function(data) {
+        userLoggedInId = data.id;
+        userLoggedInName = data.name;
+        });
+    }
+    
     // Submits new assignment to the database
     function saveAssignment(assignment) {
         $.post("/api/assignments", assignment, function() { 
-
         });
-
         location.href = "/assignments";
     }
             
     $("#save-assignment").on("click", function(event) {
 
         event.preventDefault();
-
         var name = $("#assignment-name").val().trim();
 
-        var userEntered = userLoggedInId;
-
-        // This checks to make sure these fields are not empty
+        // checks to make sure form fields are not empty
          if (!name) {
             $(".alertUser").text("Please enter an assignment name.");
             return;
         } 
-
         //Create a new object to go into the database
         var newAssignment = {
-            name: name,
-            UserId: userLoggedInId
+            assignName: name,
         };
-
         saveAssignment(newAssignment);
     });
     </script>
