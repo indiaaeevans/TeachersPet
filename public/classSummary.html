@@ -55,7 +55,7 @@
                 </thead>
               </table>
               <!-- List of Students -->
-              <ul class="collection">
+              <ul class="collection list-of-students">
                 <li class="collection-item avatar">
                   <a href="#student-summary-modal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png" alt="" class="circle">
           <p class="name">Henrietta Zoe</p>
@@ -64,41 +64,12 @@
             </p>
             </a>
                 </li>
-                <li class="collection-item avatar">
+                <li class="collection-item avatar slected-student">
                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png" alt="" class="circle">
                   <p class="name">Jenny Lopez</p>
                   <p class="email">Jennyfromtheblock@yahoo.com</p>
                 </li>
-                <li class="collection-item avatar">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png" alt="" class="circle">
-                  <p class="name">Keila Ben</p>
-                  <p class="email">Benkei@yahoo.com</p>
-                </li>
-                <li class="collection-item avatar">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png" alt="" class="circle">
-                  <p class="email">William Rogers</p>
-                  <p class="email">Billy@yahoo.com</p>
-                </li>
-                <li class="collection-item avatar">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png" alt="" class="circle">
-                  <p class="email">William Rogers</p>
-                  <p class="email">Billy@yahoo.com</p>
-                </li>
-                <li class="collection-item avatar">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png" alt="" class="circle">
-                  <p class="email">William Rogers</p>
-                  <p class="email">Billy@yahoo.com</p>
-                </li>
-                <li class="collection-item avatar">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png" alt="" class="circle">
-                  <p class="email">William Rogers</p>
-                  <p class="email">Billy@yahoo.com</p>
-                </li>
-                <li class="collection-item avatar">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png" alt="" class="circle">
-                  <p class="email">William Rogers</p>
-                  <p class="email">Billy@yahoo.com</p>
-                </li>
+         
               </ul>
             </div>
             <!-- end of panel -->
@@ -133,13 +104,13 @@
     <!-- end of panel with documents code -->
 
 
-    <!-- Panel with annoucements -->
+    <!-- Panel with events-->
     <div class="col s6">
       <div class="card-panel white">
         <table>
           <thead>
             <tr>
-              <th>Events<a class="btn-floating btn-tiny waves-effect waves-light orange lighten-3 student-add-btn"><i class="tiny material-icons">add</i></th>
+              <th>Events<a href="#add-event-modal" class="btn-floating btn-tiny waves-effect waves-light orange lighten-3 event-add-btn"><i class="tiny material-icons">add</i></th>
             </tr>
           </thead>
           <tbody>
@@ -215,35 +186,42 @@
             </div>
           </div>
           <!-- end of student modal code -->
+
           <!-- Modal for Adding Student -->
           <div id="add-student-modal" class="modal modal-fixed-footer">
             <div class="modal-content">
               <h4>New Student</h4>
               <!-- FORM INPUT -->
               <div class="row">
-                <form class="col s12" id="signup" name="signup" method="post" action="/signup">
+                <form class="col s12" id="add-student-form" name="add-student-form">
                   <!--First Name-->
                   <div class="row">
                     <div class="input-field col s12">
-                      <input name="first-name" id="first-name" type="text" class="validate newuser"></input>
+                      <input name="first-name" id="first-name" type="text"></input>
                       <label for="first-name">First Name:</label>
                     </div>
                   </div>
                   <!--Last Name-->
                   <div class="row">
                     <div class="input-field col s12">
-                      <input name="last-name" id="last-name" type="text" class="validate newuser"></input>
+                      <input name="last-name" id="last-name" type="text"</input>
                       <label for="last-name">Last Name:</label>
+                    </div>
+                  </div>
+                   <!--imgUrl-->
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input name="img-url" id="img-url" type="text"></input>
+                      <label for="img-url">Image Url:</label>
                     </div>
                   </div>
                   <!--Email-->
                   <div class="row">
                     <div class="input-field col s12">
-                      <input name="email" id="email" type="email" class="validate newuser"></input>
+                      <input name="email" id="email" type="email"></input>
                       <label for="email">Email:</label>
                     </div>
                   </div>
-                  <!--Password-->
                   <div class="row">
                     <!-- FORM SUBMIT BUTTON-->
                     <div class="col s2 right-align">
@@ -259,6 +237,44 @@
               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
             </div>
           </div>
+          <!-- end of modal code -->
+
+          <!-- Modal for Adding Student -->
+          <div id="add-event-modal" class="modal modal-fixed-footer">
+            <div class="modal-content">
+              <h4>Add Event</h4>
+              <!-- FORM INPUT -->
+              <div class="row">
+                <form class="col s12" id="add-event-form" name="add-event-form">
+                  <!--Event Name-->
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input name="event-name" id="event-name" type="text"></input>
+                      <label for="event-name">Event Name:</label>
+                    </div>
+                  </div>
+                  <!--Event Date-->
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input type="text" class="datepicker" id="event-date">
+                      <label for="event-date">When:</label>
+                    </div>
+                  </div>
+
+                   <!-- FORM SUBMIT BUTTON-->
+                    <div class="col s2 right-align">
+                      <button id="submit-event-btn" class="btn waves-effect waves-light blue lighten-1" type="submit" value="Sign Up">Add
+                        <i class="material-icons right">input</i>
+                      </button>
+                    </div>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+            </div>
+          </div>
+          <!-- end of modal code -->
 </body>
 <!--  Scripts-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -270,6 +286,28 @@
 $(document).ready(function() {
   $('.modal').modal();
 });
+
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false // Close upon selecting a date,
+  });
+
+//add event button
+$("#submit-event-btn").on("click", function(event) {
+
+  var eventName = $("#event-name").val().trim();
+
+  var eventDate = $("#event-date").val().trim();
+
+  console.log("My event is" + eventName + ". It will happen on." + eventDate);
+
+
+  });
+
 
 </script>
 

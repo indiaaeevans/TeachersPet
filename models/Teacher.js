@@ -26,6 +26,8 @@ module.exports = function (sequelize, DataTypes) {
   }); 
   Teacher.associate = function(models) {
     Teacher.hasMany(models.Students); 
+    Teacher.hasMany(models.Cal_Events); 
+
   }
   return Teacher;
 }
