@@ -58,19 +58,28 @@ module.exports = function (app, passport) {
     failureRedirect: '/signin'
   }));
 
-  // Route for getting some data about our user to be used client side
-  // (HAVEN'T TESTED THIS YET, BASED OFF CLASS EXAMPLE)
-  app.get("/api/user_data", function (req, res) {
-    if (!req.user) {
-      // The user is not logged in, send back an empty object
-      res.json({});
-    } else {
-      // Otherwise send back the user's name
-      res.json({
-        name: req.user.name,
-      });
-    }
-  });
+	// Route for getting some data about our teacher to be used client side
+	app.get("/api/teacher_data", function(req, res) {
+	    if (!req.teacher) {
+	      // If the user is not logged in, send back an empty object
+	      res.json({
+	      	name: "Teacher",
+	      });
+	    }
+	    else {
+				// This capitalizes the first letter of each name, and lowercase all others
+        req.teacher.name = (req.teacher.name).toLowerCase().replace(/\b[a-z]/g, function(letter) {
+            return letter.toUpperCase();
+        });
+
+	      // Otherwise send back the user's name
+	      res.json({
+	        name: req.teacher.name,
+	        email: req.teacher.email,
+	        id: req.teacher.id
+	      });
+	    }
+	  });
 
   // custom middleware to protect routes after logging in
   function isLoggedIn(req, res, next) {
