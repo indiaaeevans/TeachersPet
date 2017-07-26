@@ -1,4 +1,4 @@
-.brand-logo, h4 {
+.brand-logo, h4, h5 {
     font-family: 'Zilla Slab', serif;
 }
 
@@ -147,11 +147,14 @@ label {
 
 .student-add-btn{
     margin-left: 90%;
-
 }
 
 #list {
     margin-bottom: 0;
+}
+
+#attendance-container {
+    margin-bottom: 100px;
 }
 
 #allAssignments {
@@ -182,6 +185,14 @@ hr.style17:after {
 .globe {
     line-height: 50px;
     padding-bottom: 30px;
+}
+
+#footer-filler {
+    height: 70px;   
+}
+
+body {
+    min-height: 100%;
 }
 /* media tags */
 
