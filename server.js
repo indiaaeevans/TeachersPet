@@ -55,6 +55,7 @@ require('./routes/authRoutes.js')(app, passport);
 require('./config/passport/passport.js')(passport, db.Teacher);
 //load amazon web service route 
 // require('./routes/upload')(app);
+require('./routes/apiRoutes')(app); 
 
   // DEV ONLY!!: 
   // use code below to force true if prevented by sequelize error 
@@ -66,7 +67,6 @@ require('./config/passport/passport.js')(passport, db.Teacher);
   //   }); 
 
 db.sequelize.sync({force: true}).then(function () {
-
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
     db.Teacher.create({

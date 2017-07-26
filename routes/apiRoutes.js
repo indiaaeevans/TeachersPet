@@ -9,14 +9,16 @@ module.exports = function (app) {
 
     db.Students.findAll({
       include: [{
-        model: db.Assignments,
-        include: [db.Grades]
+        model: db.Grades,
+        include: [{
+          model: db.Assignments
+        }]
       }],
       raw: true
-    }).then(function (students) {
-      res.json(students);
+    }).then(function (student) {
+      res.json(student);
     });
-
+  
   });
 
   app.post('/api/students', function (req, res) {
