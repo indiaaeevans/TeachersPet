@@ -1,8 +1,5 @@
-.main-header {
-    padding-top: .8%;
-    padding-left: .8%;
-    color: white;
-    font-family: 'Fredoka One', cursive;
+.brand-logo, h4 {
+    font-family: 'Zilla Slab', serif;
 }
 
 .page-header {
@@ -17,18 +14,6 @@
     height: 450px;
     background-size: 110%;
     background-repeat: no-repeat;
-}
-
-nav {
-    margin-bottom: 20px;
-}
-
-#landing {
-    margin: 0;
-}
-
-#attendance-submit {
-    margin-bottom: 50px;
 }
 
 #index-banner {
@@ -55,6 +40,14 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
     display: inline;
     font-size: 20px;
     margin-left: 5px;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+#landing {
+    margin-bottom: 0;
 }
 
 #login {
@@ -153,9 +146,19 @@ label {
 }
 
 .student-add-btn{
- margin-left: 90%;
+    margin-left: 90%;
 
 }
+
+#list {
+    margin-bottom: 0;
+}
+
+#allAssignments {
+    position: relative;
+    top: 20px;
+}
+
 /* HORIZONTAL RULE STYLES  */
 hr.style17 {
 	border-top: 1px solid #8c8b8b;
@@ -176,12 +179,10 @@ hr.style17:after {
 	transform: rotate(60deg);
 }
 
-
-
-/* navbar code */
-
-
-
+.globe {
+    line-height: 50px;
+    padding-bottom: 30px;
+}
 /* media tags */
 
 /* @media screen and (min-width: 1645px)s {
