@@ -1,4 +1,5 @@
- $(document).ready(function () {
-   $('.modal').modal();
- });
+'use strict';
 
+$(document).ready(function () {
+  $('.modal').modal();
+});
