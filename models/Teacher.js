@@ -25,9 +25,15 @@ module.exports = function (sequelize, DataTypes) {
     }
   }); 
   Teacher.associate = function(models) {
+<<<<<<< HEAD
     Teacher.hasMany(models.Students); 
     Teacher.hasMany(models.Cal_Events); 
 
+=======
+    Teacher.hasMany(models.Students, {
+      onDelete: 'cascade'
+    }); 
+>>>>>>> ecd90008261d468ffff50d55f991f181e6727fb0
   }
   return Teacher;
 }

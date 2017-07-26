@@ -8,8 +8,9 @@ module.exports = function (sequelize, DataTypes) {
     },
   }); 
   Assignments.associate = function(models) {
-    Assignments.belongsTo(models.Students); 
-    Assignments.hasMany(models.Grades); 
+    Assignments.hasMany(models.Grades, {
+      onDelete: 'cascade' 
+    }); 
   }
   return Assignments;
 }

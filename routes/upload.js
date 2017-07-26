@@ -41,10 +41,9 @@ module.exports = function (app) {
           img: 'img-file' 
       }
     */
-    sendFileToAmazon(req.files.img);
+    sendFileToAmazon(req.files.pdf);
     res.status(200).send('Image was successfully sent to AWS');
   });
-
 
   app.get('/api/upload', function (req, res) {
     var s3 = new AWS.S3({
