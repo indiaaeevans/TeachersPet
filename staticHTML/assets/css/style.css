@@ -57,8 +57,10 @@ nav {
 
 .teacher-menu {
     min-width: 100%;
-    margin-top:20px;
+    margin-top: 20px;
     margin-bottom: 10px;
+    font-size: 14px;
+    font-family: 'Zilla Slab', serif;
 }
 
 .extra-padding {
@@ -159,7 +161,7 @@ label {
 
 #allAssignments {
     position: relative;
-    top: 20px;
+    top: -20px;
 }
 
 /* HORIZONTAL RULE STYLES  */
