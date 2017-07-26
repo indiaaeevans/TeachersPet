@@ -36,5 +36,19 @@ module.exports = function (app) {
     // });
   });
 
+  //route for retrieving all assignments
+  app.get("/api/assignments", function(req, res) {
+    db.Assignment.findAll({ }).then(function(results) { 
+        res.json(results);
+    });
+  });
+
+  // route for saving a new assignment
+  app.post("/api/assignments", function(req, res){
+    db.Assignment.create({
+      assignName: req.body.assignName
+    });
+  });
+
 }
 
