@@ -2,6 +2,10 @@
     font-family: 'Zilla Slab', serif;
 }
 
+#modal-login {
+    height: 60%;
+}
+
 .page-header {
     background-color: #62BFBB;
     height: 7%;
