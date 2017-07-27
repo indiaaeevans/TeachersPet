@@ -1,18 +1,32 @@
 module.exports = function(sequelize, DataTypes) {
   var Students = sequelize.define('Students', {
-    name: {
-      type: DataTypes.STRING, 
-      notEmpty: true, 
+    firstName: {
+      type: DataTypes.STRING,
+      notEmpty: true,
       validate: {
-        isAlpha: true 
+        isAlpha: true
       }
-    }, 
+    },
+
+    lastName: {
+      type: DataTypes.STRING,
+      notEmpty: true,
+      validate: {
+      isAlpha: true
+      }
+    },
+
     email: {
-      type: DataTypes.STRING, 
-      notEmpty: true, 
+      type: DataTypes.STRING,
+      notEmpty: true,
       validate: {
-        isEmail: true, 
+      isEmail: true,
       }
+    },
+
+    imgUrl: {
+      type: DataTypes.STRING,
+      notEmpty: true
     }
 
   });
@@ -27,5 +41,5 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: 'cascade'
     }); 
   }
-  return Students; 
+  return Students;
 }
