@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "teacherspet_dev",
+    "database": "teacherapp_dev",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
