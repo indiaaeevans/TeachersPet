@@ -61,7 +61,7 @@ module.exports = function (app, passport) {
 	// Route for getting some data about our teacher to be used client side
 	app.get("/api/teacher_data", function(req, res) {
 	    if (!req.teacher) {
-	      // If the user is not logged in, send back an empty object
+	      // If the user is not logged in, send back a filler name
 	      res.json({
 	      	name: "Teacher",
 	      });

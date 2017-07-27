@@ -1,8 +1,5 @@
-.main-header {
-    padding-top: .8%;
-    padding-left: .8%;
-    color: white;
-    font-family: 'Fredoka One', cursive;
+nav .brand-logo {
+    font-family: 'Zilla Slab', serif;
 }
 
 .page-header {
