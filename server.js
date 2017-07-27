@@ -8,8 +8,6 @@ const methodOverride = require('method-override');
 var passport = require('passport');
 var session = require('express-session');
 const fileUpload = require('express-fileupload');
-// var sslRootCAs = require('ssl-root-cas/latest')
-// sslRootCAs.inject(); 
 require("node-jsx").install(); 
 
 // Models
@@ -148,5 +146,4 @@ db.sequelize.sync({force: true}).then(function () {
 
   });
 });
-
 
