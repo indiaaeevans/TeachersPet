@@ -165,87 +165,73 @@
 
           <!-- Modal for Adding Student -->
           <div id="add-student-modal" class="modal modal-fixed-footer">
-            <div class="modal-content">
+            <div class="modal-content center">
               <h4>New Student</h4>
               <!-- FORM INPUT -->
-              <div class="row">
-                <form class="col s12" id="add-student-form" name="add-student-form">
+                <form id="add-student-form" name="add-student-form">
                   <!--First Name-->
                   <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s10 offset-s1">
                       <input name="first-name" id="first-name" type="text"></input>
                       <label for="first-name">First Name:</label>
                     </div>
                   </div>
                   <!--Last Name-->
                   <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s10 offset-s1">
                       <input name="last-name" id="last-name" type="text"</input>
                       <label for="last-name">Last Name:</label>
                     </div>
                   </div>
                    <!--imgUrl-->
                   <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s10 offset-s1">
                       <input name="img-url" id="img-url" type="text"></input>
                       <label for="img-url">Image Url:</label>
                     </div>
                   </div>
                   <!--Email-->
                   <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s10 offset-s1">
                       <input name="email" id="email" type="email"></input>
                       <label for="email">Email:</label>
                     </div>
                   </div>
-                  <div class="row">
-                    <!-- FORM SUBMIT BUTTON-->
-                    <div class="col s2 right-align">
-                      <button id="add-student-btn" class="btn waves-effect waves-light teal lighten-1" type="submit">Add
-                        <i class="material-icons right">input</i>
-                      </button>
-                    </div>
-                  </div>
+
                 </form>
-              </div>
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+              <!-- FORM SUBMIT BUTTON-->
+                <button id="add-student-btn" class="btn waves-effect waves-light teal lighten-2" type="submit">Add Student</button>
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
             </div>
           </div>
           <!-- end of modal code -->
 
           <!-- Modal for Adding Event -->
           <div id="add-event-modal" class="modal modal-fixed-footer">
-            <div class="modal-content">
+            <div class="modal-content center">
               <h4>Add Event</h4>
               <!-- FORM INPUT -->
-              <div class="row">
-                <form class="col s12" id="add-event-form" name="add-event-form">
+                <form id="add-event-form" name="add-event-form">
                   <!--Event Name-->
                   <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s10 offset-s1">
                       <input name="event-name" id="event-name" type="text"></input>
                       <label for="event-name">Event Name:</label>
                     </div>
                   </div>
                   <!--Event Date-->
                   <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s10 offset-s1">
                       <input type="text" class="datepicker" id="event-date">
                       <label for="event-date">When:</label>
                     </div>
                   </div>
-                  <!-- FORM SUBMIT BUTTON-->
-                  <div class="col s2 right-align">
-                    <button id="submit-event-btn" class="btn waves-effect waves-light teal lighten-1" type="submit">Add
-                      <i class="material-icons right">input</i>
-                    </button>
-                  </div>
                 </form>
-              </div>
             </div>
             <div class="modal-footer">
+              <button id="add-student-btn" class="btn waves-effect waves-light teal lighten-2" type="submit">Save Event</button>
               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
             </div>
           </div>
