@@ -46,7 +46,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="Geography HW1" id="ssignment-name" type="text" class="validate">
+                        <input id="assignment-name" type="text" class="validate" value="">
                         <label for="assignment-name">Assignment Name</label>
                     </div>
                 </div>
@@ -87,7 +87,8 @@
                                     <i class="tiny material-icons delete-icon">assignment_turned_in</i>
                                     </div>
                                 </div>
-                            </li>                        </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>            
             </div>
@@ -116,12 +117,6 @@
     $(document).ready(function () {
         // initialize modals
         $('.modal').modal();
-        // Initialize collapse button
-        $(".button-collapse ").sideNav();
-        // Show sideNav
-        $('.button-collapse').sideNav('hide');
-        // form select
-        $('select').material_select();
 
         // show already saved assignments on the page
         function listDisplay(data) {
@@ -182,7 +177,7 @@
                 assignName: name,
             };
             saveAssignment(newAssignment);
-        });
+        }); 
     });
     </script>
 </body>
