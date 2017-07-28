@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
 <!-- Navigation -->
     <!-- Dropdown Structure -->
  <nav class="teal lighten-1" role="navigation">
@@ -34,6 +35,7 @@
   <li><a href="../classSummary.html">Student Summary</a></li>
 </ul>
 </nav>
+
 <div class="container">
   <!-- PAGE HEADER  -->
   <div class="row">
@@ -71,132 +73,66 @@
 <!-- ALL STUDENTS LISTED HERE  -->
   <div class="row">
     <div class="col s12 student-list-pnl">
-
+      
       <div class="card-panel white">
-
-        <table>
-          <thead>
-            <tr>
-              <th>Students <a class="btn-floating btn-tiny waves-effect waves-light orange lighten-3 student-add-btn"><i class="tiny material-icons">add</i></a></th>
-            </tr>
-          </thead>
-        </table>
-
-        <!-- List of Students -->
-        <ul class="collection">
-
-          <li class="collection-item avatar">
-            <a href="#student-modal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png" alt="" class="circle">
+        <div class="card-content black-text">
+          <h5 class="center">Students
+            <!-- <a href="#add-student-modal" 
+            class="btn-floating btn-tiny waves-effect waves-light 
+            orange lighten-2 student-add-btn"><i class="tiny material-icons">add</i></a> -->
+            <a href="#add-student-modal" class="">
+            <i class="material-icons orange-text">add_circle</i></a>
+          </h5>
+          <!-- List of Students -->
+          <ul class="collection list-of-students">
+            <li class="collection-item avatar">
+              <a href="#student-summary-modal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png" alt="" class="circle">
               <p class="name">Henrietta Zoe</p>
-              <p class="email">henrietta@gmail.com</p>
-            </a>
-          </li>
-
-          <li class="collection-item avatar">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png"
-              alt="" class="circle">
-            <p class="name">Jenny Lopez</p>
-            <p class="email">Jennyfromtheblock@yahoo.com</p>
-          </li>
-
-          <li class="collection-item avatar">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png"
-              alt="" class="circle">
-            <p class="name">Keila Ben</p>
-            <p class="email">Benkei@yahoo.com</p>
-          </li>
-
-          <li class="collection-item avatar">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png"
-              alt="" class="circle">
-            <p class="email">William Rogers</p>
-            <p class="email">Billy@yahoo.com</p>
-          </li>
-
-          <li class="collection-item avatar">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png"
-              alt="" class="circle">
-            <p class="email">William Rogers</p>
-            <p class="email">Billy@yahoo.com</p>
-          </li>
-
-          <li class="collection-item avatar">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png"
-              alt="" class="circle">
-            <p class="email">William Rogers</p>
-            <p class="email">Billy@yahoo.com</p>
-          </li>
-
-          <li class="collection-item avatar">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png"
-              alt="" class="circle">
-            <p class="email">William Rogers</p>
-            <p class="email">Billy@yahoo.com</p>
-          </li>
-
-          <li class="collection-item avatar">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png"
-              alt="" class="circle">
-            <p class="email">William Rogers</p>
-            <p class="email">Billy@yahoo.com</p>
-          </li>
-
-        </ul>
-        
+              <p class="email">henrietta@gmail.com</a>
+            </li>
+          </ul>
+        </div>
       </div><!-- end of panel -->
+
     </div><!-- end of column -->
   </div><!-- end of row -->
 
   <!-- BOTTOM PANELS  -->
   <div class="row">
-    <!-- Panel with documents -->
-    <div class="col s6">
-      <div class="card-panel white">
-        <table>
-          <thead>
-            <tr>
-              <th>Documents<a class="btn-floating btn-tiny waves-effect waves-light orange lighten-3 student-add-btn"><i class="tiny material-icons">add</i></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Study Guide</td>
-            </tr>
-            <tr>
-              <td>Test #1 Solutions</td>
-            </tr>
-            <tr>
-              <td>Homework 3</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div><!-- end of panel with documents -->
-
-    <!-- Panel with annoucements -->
-    <div class="col s6">
-      <div class="card-panel white">
-        <table>
-          <thead>
-            <tr>
-              <th>Events<a class="btn-floating btn-tiny waves-effect waves-light orange lighten-3 student-add-btn"><i class="tiny material-icons">add</i></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Test On Friday</td>
-            </tr>
-            <tr>
-              <td>Quiz on Tuesday</td>
-            </tr>
-            <tr>
-              <td>Homework 3</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div><!-- end of panel with announcements -->
-
+    <!-- PANEL WITH DOCUMENTS -->
+        <div class="col s6">
+          <div class="card white">
+            <div class="card-content black-text">
+              <span class="card-title"><h5>Documents</h5></span>
+                <ul>
+                  <li>Test 1 Solution<li>
+                  <li>Unit 6 Study Guide<li>
+                </ul>
+            </div>
+            <div class="card-action">
+              <a href="#document-modal">Upload a Document</a>
+              <a href="#document-modal" class="right">
+              <i class="material-icons">add_circle</i></a>
+            </div>
+          </div>
+        </div>
+    <!--PANEL WITH EVENTS / ANNOUNCEMENTS  -->
+        <div class="col s6">
+          <div class="card white">
+            <div class="card-content black-text">
+              <span class="card-title"><h5>Calendar</h5></span>
+                <ul>
+                  <li>Test On Friday<li>
+                  <li>Quiz on Tuesday<li>
+                </ul>
+            </div>
+            <div class="card-action">
+              <a href="#add-event-modal">Add an Event</a>
+              <a href="#add-event-modal" class="right">
+              <i class="material-icons">add_circle</i></a>
+            </div>
+          </div>
+        </div>
   </div><!-- end of row -->
 
 </div><!-- end of container -->
@@ -212,50 +148,144 @@
             </div>
         </div>
     </footer>
+          <!-- STUDENT SUMMARY modal -->
+          <div id="student-summary-modal" class="modal modal-fixed-footer">
+            <div class="modal-content">
+              <div class="row center">
+              <!--Student Pic-->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png" alt="">
+              </div>
+              <!--Name and grade-->
+              <div class="row center">
+                <h4>Student Name</h4>
+              </div>
+              <div class="row">
+                <div class="col s6">
+                  <p>Cumulative Grade: 92</p>
+                  <p>Email: henrietta@yahoo.com</p>
+                  <p>Number of Absences: 2</p>
+                </div>
+                <div class="col s6 right-align">
+                  <div class="row">
+                    <a href="/api/student/email" class="waves-effect waves-light btn ">Email Student</a>
+                  </div>
+                  <div class="row">
+                    <a href="/api/student/grade" class="waves-effect waves-light btn ">Upload Grade</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer right">
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+            </div>
+          </div>
+          <!-- end of student modal code -->
 
-    <!-- student modal -->
-    <div id="student-modal" class="modal modal-fixed-footer">
-      <div class="modal-content">
-        <h4>Register</h4>
-        <!-- FORM INPUT -->
-        <div class="row">
-          <form class="col s12" id="signup" name="signup" method="post" action="/signup">
-            <!--Name-->
-            <div class="row">
-              <div class="input-field col s12">
-                <input name="name" type="text" class="validate newuser"></input>
-                <label for="name">Name:</label>
-              </div>
+          <!-- Modal for Adding Student -->
+          <div id="add-student-modal" class="modal modal-fixed-footer">
+            <div class="modal-content center">
+              <h4>New Student</h4>
+              <!-- FORM INPUT -->
+                <form id="add-student-form" name="add-student-form">
+                  <!--First Name-->
+                  <div class="row">
+                    <div class="input-field col s5 offset-s1">
+                      <input name="first-name" id="first-name" type="text"></input>
+                      <label for="first-name">First Name:</label>
+                    </div>
+                  <!--Last Name-->
+                    <div class="input-field col s5">
+                      <input name="last-name" id="last-name" type="text"</input>
+                      <label for="last-name">Last Name:</label>
+                    </div>
+                  </div>
+                   <!--imgUrl-->
+                  <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                      <input name="img-url" id="img-url" type="text"></input>
+                      <label for="img-url">Image Url:</label>
+                    </div>
+                  </div>
+                  <!--Email-->
+                  <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                      <input name="email" id="email" type="email"></input>
+                      <label for="email">Email:</label>
+                    </div>
+                  </div>
+
+                </form>
             </div>
-            <!--Email-->
-            <div class="row">
-              <div class="input-field col s12">
-                <input name="email" type="email" class="validate newuser"></input>
-                <label for="email">Email:</label>
-              </div>
-            </div>
-            <!--Password-->
-            <div class="row">
-              <div class="input-field col s12">
-                <input name="password" type="password" class="newuser validate">
-                <label for="password">Password</label>
-              </div>
+            <div class="modal-footer">
               <!-- FORM SUBMIT BUTTON-->
-              <div class="col s2 right-align">
-                <button id="signupbutton" class="btn waves-effect waves-light blue lighten-1" type="submit" value="Sign Up">Submit
-                                    <i class="material-icons right">input</i>
-                                </button>
-              </div>
+                <button id="add-student-btn" class="btn waves-effect waves-light teal lighten-2" type="submit">Add Student</button>
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
             </div>
-          </form>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
-      </div>
-    </div>
-    <!-- end of student modal code -->
+          </div>
+          <!-- end of modal code -->
 
+          <!-- Modal for Adding Event -->
+          <div id="add-event-modal" class="modal modal-fixed-footer">
+            <div class="modal-content center">
+              <h4>Add Event</h4>
+              <!-- FORM INPUT -->
+                <form id="add-event-form" name="add-event-form">
+                  <!--Event Name-->
+                  <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                      <input name="event-name" id="event-name" type="text"></input>
+                      <label for="event-name">Event Name:</label>
+                    </div>
+                  </div>
+                  <!--Event Date-->
+                  <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                      <input type="text" class="datepicker" name="event-date" id="event-date">
+                      <label for="event-date">When:</label>
+                    </div>
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button id="add-event-btn" class="btn waves-effect waves-light teal lighten-2" type="submit">Save Event</button>
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+            </div>
+          </div>
+          <!-- end of modal code -->
+
+          <!-- Modal for Uploading Documents -->
+          <div id="document-modal" class="modal modal-fixed-footer">
+            <div class="modal-content center">
+              <h4>Upload Documents</h4>
+              <!-- FORM INPUT -->
+                <form action="post">
+                  <!--Document Name-->
+                  <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                      <input name="docName" type="text"></input>
+                      <label for="docName">Document Name:</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col s10 offset-s1 file-field input-field">
+                      <div class="btn">
+                        <span>File</span>
+                        <input type="file">
+                      </div>
+                      <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn waves-effect waves-light teal lighten-2" type="submit">Save Document</button>
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+            </div>
+          </div>
+          <!-- end of modal code -->
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="assets/js/materialize.js"></script>
@@ -263,12 +293,11 @@
     <script type="text/javascript">
       
       $(document).ready(function () {
-        // initialize modals
+        // initialize materialize
         $('.modal').modal();
-        // Initialize collapse button
         $(".button-collapse ").sideNav();
-        // Show sideNav
         $('.button-collapse').sideNav('hide');
+        $(".dropdown-button").dropdown();
       });
 
     </script>
