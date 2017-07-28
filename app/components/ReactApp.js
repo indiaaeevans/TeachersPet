@@ -18,17 +18,7 @@ var ReactApp = React.createFactory(React.createClass({
   render: function() {
     return (
       <div>
-        <div className="row">
-          <div className="col s12 student-list-pnl">
 
-            <div className="card-panel white">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Students <a className="btn-floating btn-tiny waves-effect waves-light orange lighten-3 student-add-btn"><i className="tiny material-icons">add</i></a></th>
-                  </tr>
-                </thead>
-              </table>
 
               <ul className="collection">
 
@@ -45,9 +35,6 @@ var ReactApp = React.createFactory(React.createClass({
 
               </ul>
 
-            </div>
-          </div>
-        </div>
       </div>
 
     ); 
