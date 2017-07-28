@@ -14,14 +14,24 @@
 
 <body>
     <!-- Navigation -->
+    <!-- Dropdown Structure -->
+    <ul id="dropdown-menu" class="dropdown-content">
+      <li><a href="/classSummary">Portal</a></li>
+      <li><a href="/assignments">Assignments</a></li>
+      <li><a href="/attendance">Attendance</a></li>
+      <li><a href="/classSummary#document-modal">Documents</a></li>
+      <li class="divider"></li>
+      <li><a href="/logout">Log Out</a></li>
+    </ul>
+
     <nav class="teal lighten-1" role="navigation">
         <div class="nav-wrapper container">
             <img src="./assets/images/globe.png" width="50px" class="globe">
             <a href="/menu" class="brand-logo">Teacher's Pet</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="/logout">Log Out</a></li>
+              <!-- Dropdown Trigger -->
+              <li><a class="dropdown-button" href="#!" data-activates="dropdown-menu">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
     </nav>
 
