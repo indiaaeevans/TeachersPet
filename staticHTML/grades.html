@@ -66,13 +66,14 @@
                 </div>           
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="89" id="grade" type="text" class="validate">
-                        <label for="assignment-name">Grade (0-100)</label>
+                        <input placeholder="89" id="grade-input" type="text" class="validate">
+                        <label for="grade-input">Grade (0-100)</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col s12">
-                        <button id="save-grade" class="btn waves-effect waves-light right" type="submit" name="action">Save
+                        <button formmethod="post" formaction="/api/grades" id="save-grade" class="btn waves-effect waves-light right"
+                        type="submit" name="save-grade">Save
                             <i class="material-icons right">save</i>
                         </button>
                     </div>
@@ -146,11 +147,27 @@
 
         function assignmentSelect(data){
             for (var i = 0; i < data.length; i++){
-                
+
                 var option = $("<option>");
                 option.text(data[i].assignName);
                 option.attr("value", data[i].id);
                 $("#assignments-select").append(option);
+            }
+        }
+
+        $.post("/api/grades", grade, function() { });
+
+        function postGrade (grade){
+            // check that the form is filled out
+            if ($("#assignments-select").val() == 0 | $("#grade-input").val() == 0 ) {
+                console.log("Please fill both required fields");
+                return;
+            }
+
+            // new object to post to the database
+            var newGrade = {
+                assignmentId: id,
+                grade: grade
             }
         }
       });

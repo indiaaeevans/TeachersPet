@@ -146,16 +146,6 @@
 
         $.get("/api/assignments").then(listDisplay(data));
 
-    // function getTeacher() {
-    //     var userLoggedInId = "";
-    //     var userLoggedInName = "";
-        
-    //     $.get("/api/teacher_data").then(function(data) {
-    //     userLoggedInId = data.id;
-    //     userLoggedInName = data.name;
-    //     });
-    // }
-
         // Submits new assignment to the database
         function saveAssignment(assignment) {
             $.post("/api/assignments", assignment, function() { 
