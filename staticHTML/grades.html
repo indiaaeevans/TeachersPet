@@ -55,6 +55,17 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
+                        <select id="assignments-select">
+                            <option value="" disabled selected>Choose an Assignment</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label>Assignment</label>
+                    </div>     
+                </div>           
+                <div class="row">
+                    <div class="input-field col s12">
                         <input placeholder="89" id="grade" type="text" class="validate">
                         <label for="assignment-name">Grade (0-100)</label>
                     </div>
@@ -129,6 +140,19 @@
         $(".button-collapse ").sideNav();
         $('.button-collapse').sideNav('hide');
         $(".dropdown-button").dropdown();
+        $('select').material_select();
+
+        $.get("/api/assignments").then(assignmentSelect(data));
+
+        function assignmentSelect(data){
+            for (var i = 0; i < data.length; i++){
+                
+                var option = $("<option>");
+                option.text(data[i].assignName);
+                option.attr("value", data[i].id);
+                $("#assignments-select").append(option);
+            }
+        }
       });
 
     </script>
