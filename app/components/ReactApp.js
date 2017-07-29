@@ -18,17 +18,20 @@ var ReactApp = React.createFactory(React.createClass({
   render: function() {
     return (
       <div>
-        <ul className="collection">
+        <div className="row">
+          <div className="col s12 student-list-pnl">
+
+            <div className="card-panel white">
+         
+              <ul className="collection">
 
               {this.state.students.map((students, i) =>{
                 return (
-                  <li key={i} className="collection-item avatar">
-                   <a key={`${students.name + i}`} href="#student-modal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png" alt="" className="circle" />
-                    <p key={students.firstName} className="name">{students.firstName}</p>
-                    <p key={students.email} className="email">{students.email}</p>
+                  <li id={students.name} key={i} className="collection-item avatar">
+                   <a key={`${students.name + i}`} ><img src={students.imgUrl} alt="" className="circle" />
+                    <p key={students.firstName} className="name">{students.name}</p>
                   </a>
-                </li>
-                ); 
+                </li>                ); 
               })}
         </ul>
       </div>

@@ -26,16 +26,20 @@ module.exports = function (app) {
     // ask for ideas from group to dynamically set student to teacher
     console.log(req.body);
     console.log(req.body.name);  
-    var studentName = req.body.name;
-    var studentEmail = req.body.email;
-    // db.Students.create({
-    //   name: studentName,
-    //   email: studentEmail,
-    //   TeacherId: 1
-    // }).then(function (students) {
+    var firstName = req.body.firstName;
+    var lastName = req.body.lastName;
+    var email = req.body.email;
+    var imgUrl = req.body.imgUrl;
+    var name = firstName + " " + lastName;
+    db.Students.create({
+      name: name,
+      email: email,
+      imgUrl: imgUrl,
+      TeacherId: 1
+    }).then(function (students) {
 
-    //   res.json(students);
-    // });
+      res.json(students);
+    });
   });
 
   //route for retrieving all assignments
