@@ -17,7 +17,7 @@ gulp.task('react-scripts', function() {
         compact: false
       })
     )
-    .pipe(gulp.dest('./public/assets.js/'));
+    .pipe(gulp.dest('./public/assets/js/'));
 });
 
 gulp.task('default', ['react-scripts']);
