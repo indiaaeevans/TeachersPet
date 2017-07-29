@@ -1,7 +1,9 @@
 module.exports = function (sequelize, DataTypes) {
   var Grades = sequelize.define('Grades', {
     grade: {
-      type: DataTypes.INTEGER, 
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+ 
     },
   }); 
   Grades.associate = function(models) {

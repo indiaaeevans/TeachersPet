@@ -151,6 +151,15 @@ label {
     top: 20px;
 }
 
+.picker {
+    font-size: 12px;
+    text-align: left;
+    line-height: 0;
+}
+
+.picker__date-display {
+    line-height: 1.3;
+}
 
 /* media tags */
 
