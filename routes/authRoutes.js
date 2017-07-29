@@ -5,11 +5,11 @@ module.exports = function (app, passport) {
 
   // These bring us to the main page with modals for sign up / sign in
   app.get('/signup', function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.render('index');
   });
 
   app.get('/signin', function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.render('index');
   });
 
   // When new user signs up we will take them to class summary 
@@ -31,7 +31,8 @@ module.exports = function (app, passport) {
 
   // only authenticated users should see attendance
   app.get('/attendance', isLoggedIn, function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/attendance.html"));
+    res.render('attendance'); 
+  
   });
 
     // only authenticated users should see schedule

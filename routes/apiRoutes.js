@@ -6,7 +6,8 @@ module.exports = function (app) {
   app.use(bodyParser.json());
   
   app.post('/api/students', function (req, res) {
-   var email = req.body.email; 
+   var email = req.body.email;  
+   console.log(req.body)
     db.Teachers.findAll({
       where: {
         email: email
