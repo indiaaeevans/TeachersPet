@@ -16,7 +16,6 @@
 <body>
   <%- include partials/nav.ejs %>
 
-
   <div class="container" id="attendance-container">
     <!-- HEADER   -->
     <div class="row center">
@@ -31,7 +30,7 @@
 
       </div>
       <div class='col s6'>
-        <h2> I am split in half </h2>
+        <h2> Form goes here! </h2>
       </div>
     </div>
 
@@ -55,31 +54,26 @@
     <script type="text/javascript">
       $(document).ready(function () {
         getTeacher();
-
         function getTeacher() {
           $.get("/api/teacher_data").then(function (teacher) {
             displayStudents(teacher);
           })
         }
 
-
         function displayStudents(teacher) {
-
           var teacherEmail = "jen@testteacher.com";
           console.log(teacher);
-              $.post('/api/students', teacherEmail).then(function(data) {
-  console.log(data); 
-         // code to show data on the page
-              for (var i = 0; i < data.length; i++) {
-                var listItem = $("<li>");
-
-                var studentInfo = data.name
-                listItem.append(studentInfo);
-                $("#students").append(listItem);
-              }
-            });
-        } 
-
+          $.post('/api/students', teacherEmail).then(function (data) {
+            console.log(data);
+            // code to show data on the page
+            for (var i = 0; i < data.length; i++) {
+              var listItem = $("<li>");
+              var studentInfo = data.name
+              listItem.append(studentInfo);
+              $("#students").append(listItem);
+            }
+          });
+        }
       });
 
     </script>
