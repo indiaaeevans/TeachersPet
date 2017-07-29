@@ -50,11 +50,13 @@ app.use(methodOverride('_method'));
 
 //Routes
 //=================================================
-require('./routes/htmlRoutes')(app);
+// require('./routes/htmlRoutes')(app);
+
 // Authentication routes
 require('./routes/authRoutes.js')(app, passport);
 // load passport strategies
 require('./config/passport/passport.js')(passport, db.Teacher);
+
 //load amazon web service route
 // require('./routes/upload')(app);
 require('./routes/apiRoutes')(app);
