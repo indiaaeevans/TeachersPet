@@ -12,7 +12,7 @@ gulp.task('react-scripts', function() {
     presets: ['es2015', 'react'], 
     compact: false 
   }))
-  .pipe(gulp.dest('./public/javascript/')); 
+  .pipe(gulp.dest('./public/assets.js/')); 
 }); 
 
 gulp.task('client-scripts', function() {
@@ -21,7 +21,7 @@ gulp.task('client-scripts', function() {
     presets: ['es2015'],
     compact: false 
   }))
-  .pipe(gulp.dest('./public/javascript/')); 
+  .pipe(gulp.dest('./public/assets/js')); 
 }); 
 
 gulp.task('default', ['react-scripts','client-scripts']); 

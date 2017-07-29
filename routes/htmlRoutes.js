@@ -5,12 +5,26 @@ var ReactApp = React.createFactory(require('../app/components/ReactApp.js').Reac
 
 module.exports = function (app) {
 
+<<<<<<< Updated upstream
   app.get('/', function (req, res) {
     // React.renderToString takes your component and generates the markup 
     var reactHtml = ReactDOMServer.renderToString(ReactApp({})); 
     // output rendered by react 
     res.render('index', { reactOutput: reactHtml });
   });
+=======
+  // app.get('/', function (req, res) {
+  //   // React.renderToString takes your component and generates the markup 
+  //   var reactHtml = ReactDOMServer.renderToString(ReactApp({})); 
+  //   // output rendered by react 
+  //   res.render('index', { reactOutput: reactHtml });
+  // });
+
+  app.get('/', function(req, res) {
+    res.render('assignments'); 
+  })
+}
+>>>>>>> Stashed changes
 
 
 
