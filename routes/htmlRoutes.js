@@ -11,5 +11,13 @@ module.exports = function (app) {
     // output rendered by react 
     res.render('index', { reactOutput: reactHtml });
   });
-}
 
+
+
+  app.get('/class', function (req, res) {
+    // React.renderToString takes your component and generates the markup 
+    var reactHtml = ReactDOMServer.renderToString(ReactApp({})); 
+    // output rendered by react 
+    res.render('classSummary', { reactOutput: reactHtml });
+  });
+}
