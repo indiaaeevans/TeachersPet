@@ -8,10 +8,10 @@ const methodOverride = require('method-override');
 var passport = require('passport');
 var session = require('express-session');
 const fileUpload = require('express-fileupload');
-require("node-jsx").install(); 
+require('node-jsx').install();
 
 // Models
-var db = require("./models");
+var db = require('./models');
 
 // Initialize app method
 let app = express();
@@ -26,11 +26,13 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 // For Passport
-app.use(session({
-  secret: 'keyboard cat',
-  resave: true,
-  saveUninitialized: true
-})); // session secret
+app.use(
+  session({
+    secret: 'keyboard cat',
+    resave: true,
+    saveUninitialized: true
+  })
+); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
@@ -53,18 +55,18 @@ require('./routes/htmlRoutes')(app);
 require('./routes/authRoutes.js')(app, passport);
 // load passport strategies
 require('./config/passport/passport.js')(passport, db.Teacher);
-//load amazon web service route 
+//load amazon web service route
 // require('./routes/upload')(app);
-require('./routes/apiRoutes')(app); 
+require('./routes/apiRoutes')(app);
 
-// DEV ONLY!!: 
-// use code below to force true if prevented by sequelize error 
+// DEV ONLY!!:
+// use code below to force true if prevented by sequelize error
 // db
 //   .sequelize
 //   .query('SET FOREIGN_KEY_CHECKS = 0', null, {raw: true})
 //   .then(function(results) {
-//       db.sequelize.sync({force: true}); 
-//   }); 
+//       db.sequelize.sync({force: true});
+//   });
 
 db.sequelize
   .sync({
