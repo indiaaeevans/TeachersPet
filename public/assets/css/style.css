@@ -1,204 +1,216 @@
-.brand-logo, h4, h5 {
-    font-family: 'Zilla Slab', serif;
+.brand-logo,
+h4,
+h5 {
+  font-family: 'Zilla Slab', serif;
 }
 
 #modal-login {
-    height: 60%;
+  height: 60%;
 }
 
 .delete-icon {
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 .page-header {
-    background-color: #62BFBB;
-    height: 7%;
-    margin-top: -25px;
+  background-color: #62bfbb;
+  height: 7%;
+  margin-top: -25px;
 }
 
 .picker {
-   font-size: 12px;
-   text-align: left;
-   line-height: 0;
+  font-size: 12px;
+  text-align: left;
+  line-height: 0;
 }
 
 .picker__date-display {
-   line-height: 1.3;
+  line-height: 1.3;
 }
 
 .jumbotron {
-    margin-top: -30px;
-    background-image: url('../images/banner.png');
-    height: 450px;
-    background-size: 110%;
-    background-repeat: no-repeat;
+  margin-top: -30px;
+  background-image: url('../images/banner.png');
+  height: 450px;
+  background-size: 110%;
+  background-repeat: no-repeat;
 }
 
 #index-banner {
-    background-image: url('../images/banner.png');
+  background-image: url('../images/banner.png');
 }
 
 #banner2 {
-    background-image: url('../images/classroom.png');
-    background-size: 100%;
-    background-position: center; 
+  background-image: url('../images/classroom.png');
+  background-size: 100%;
+  background-position: center;
 }
 
 .message-div {
-    /*     background-color: rgba(231, 230, 230, .85);
+  /*     background-color: rgba(231, 230, 230, .85);
  */
-    height: 400px;
-    /* background-color: none;
+  height: 400px;
+  /* background-color: none;
     box-shadow: 2px 2px 2px #888888; */
-    margin-right: 5%;
-    float: right;
+  margin-right: 5%;
+  float: right;
 }
 
-nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
-    display: inline;
-    font-size: 20px;
-    margin-left: 5px;
+nav i,
+nav [class^="mdi-"],
+nav [class*="mdi-"],
+nav i.material-icons {
+  display: inline;
+  font-size: 20px;
+  margin-left: 5px;
 }
 
 nav {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #landing {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 #login {
-    padding-top: 10px;
-    padding-bottom: 40px;
+  padding-top: 10px;
+  padding-bottom: 40px;
 }
 
 .teacher-menu {
-    min-width: 100%;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    font-family: 'Zilla Slab', serif;
+  min-width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-family: 'Zilla Slab', serif;
 }
 
 .extra-padding {
-    margin-bottom: 45px;
-    margin-top: 20px;
-    text-align: right;
+  margin-bottom: 45px;
+  margin-top: 20px;
+  text-align: right;
 }
 
 .main-message {
-    margin-top: 15%;
-    margin-left: 30px;
-    line-height: 150%;
-    color: black;
+  margin-top: 15%;
+  margin-left: 30px;
+  line-height: 150%;
+  color: black;
 }
 
 .icon-div {
-    /*  align-items: center;
+  /*  align-items: center;
     justify-content: center */
-    margin-left: 10%;
+  margin-left: 10%;
 }
 
 .icons {
-    height: 100px;
-    margin-left: -15px;
+  height: 100px;
+  margin-left: -15px;
 }
 
 .icon-title {
-    font-weight: bold;
-    color: #BF9000;
-    font-size: 12px;
+  font-weight: bold;
+  color: #bf9000;
+  font-size: 12px;
 }
 
 a.link-to-home {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .icon-div2 {
-    width: 230px;
-    text-align: center;
+  width: 230px;
+  text-align: center;
 }
 
 #name {
-    width: 80%;
-    margin-left: 10%;
+  width: 80%;
+  margin-left: 10%;
 }
 
 #password {
-    width: 80%;
-    margin-left: 10%;
+  width: 80%;
+  margin-left: 10%;
 }
 
 label {
-    padding-top: 10px;
-    font-size: 12px;
-    color: #C55A11;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #c55a11;
 }
-
 
 /* Summary Page */
-.name{
-    font-size: 12px;
+.name {
+  font-size: 12px;
 }
 
-.email{
-    font-size: 12px;
+.email {
+  font-size: 12px;
 }
 
-.collection .collection-item.avatar{
-    min-height: 50px;
+.collection .collection-item.avatar {
+  min-height: 50px;
 }
 
-.circle{
-    height: 50px;
+.circle {
+  height: 50px;
 }
 
-.card-panel{
-    overflow-y: auto;
-    max-height: 600px;
-    padding:  0px;
+.card-panel {
+  overflow-y: auto;
+  max-height: 600px;
+  padding: 0px;
 }
 
-.edit-btn{
-    margin-left: 85%;
+.edit-btn {
+  margin-left: 85%;
 }
 
-.student-add-btn{
-    margin-left: 90%;
+.student-add-btn {
+  margin-left: 90%;
 }
 
 #list {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 #attendance-container {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 #allAssignments {
-    position: relative;
-    top: -20px;
+  position: relative;
+  top: -20px;
 }
 
 .picker {
-    font-size: 12px;
-    text-align: left;
-    line-height: 0;
+  font-size: 12px;
+  text-align: left;
+  line-height: 0;
 }
 
 .picker__date-display {
-    line-height: 1.3;
+  line-height: 1.3;
 }
 
 #footer-filler {
-    height: 70px;   
+  height: 70px;
 }
 
 body {
-    min-height: 100%;
+  min-height: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
+
+main {
+  flex: 1 0 auto;
+}
+
 /* media tags */
 
 /* @media screen and (min-width: 1645px)s {
