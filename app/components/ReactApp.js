@@ -33,14 +33,8 @@ var ReactApp = React.createFactory(React.createClass({
                   </a>
                 </li>                ); 
               })}
-
-              </ul>
-
-            </div>
-          </div>
-        </div>
+        </ul>
       </div>
-
     ); 
   }
 })); 
