@@ -1,14 +1,11 @@
-var axios = require('axios'); 
+var axios = require('axios');
 
 var helpers = {
-
-  getStudents: function () {
-    return axios.get('/api/students')
-      .then(function (students) {
-        return students; 
-      });
+  getStudents: function() {
+    return axios.get('/api/teachers/students').then(function(students) {
+      return students;
+    });
   }
-}
+};
 
-module.exports = helpers; 
-
+module.exports = helpers;

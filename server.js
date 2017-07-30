@@ -4,6 +4,8 @@ const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+//import bcrypt (which we need to secure seed data password)
+var bCrypt = require('bcrypt-nodejs');
 // Authentication dependencies
 var passport = require('passport');
 var session = require('express-session');
@@ -78,11 +80,13 @@ db.sequelize
   .then(function() {
     app.listen(PORT, function() {
       console.log('App listening on PORT ' + PORT);
+      // generate hashed password for seed data for testing purposes
+      var jenPass = bCrypt.hashSync('testpass', bCrypt.genSaltSync(8), null);
       db.Teachers
         .create({
           name: 'Jen',
           email: 'jen@testteacher.com',
-          password: 'testpass'
+          password: jenPass
         })
         .then(function(teacher) {
           console.log(teacher);

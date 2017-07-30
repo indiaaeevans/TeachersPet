@@ -30,7 +30,7 @@ var ReactApp = React.createFactory(
                       <li id={students.name} key={i} className="collection-item avatar">
                         <a key={`${students.name + i}`}>
                           <img src={students.imgUrl} alt="" className="circle" />
-                          <p key={students.firstName} className="name">
+                          <p key={students.name} className="name">
                             {students.name}
                           </p>
                         </a>
