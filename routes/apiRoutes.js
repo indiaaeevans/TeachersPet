@@ -6,46 +6,14 @@ module.exports = function(app) {
   app.use(bodyParser.json());
 
   //route for retrieving all students
-    app.get("/api/students/:id", function(req, res) {
-      var id = req.params.id;
-      db.Students.findAll({
-        where: {TeacherId: id},
-      }).then(function(results) { 
-        res.json(results);
-      });
+  app.get("/api/students/:id", function(req, res) {
+    var id = req.params.id;
+    db.Students.findAll({
+      where: {TeacherId: id},
+    }).then(function(results) { 
+      res.json(results);
     });
-
-  // app.get('/api/students', function(req, res) {
-  //   var query = {};
-  //   if (req.query.id) {
-  //     query.id = req.query.id;
-  //   }
-  //   db.Teachers
-  //     .findAll({
-  //       where: {
-  //         query,
-  //       },
-  //       include: [
-  //         {
-  //           model: db.Students,
-  //           include: [
-  //             {
-  //               model: db.Grades,
-  //               include: [
-  //                 {
-  //                   model: db.Assignments
-  //                 }
-  //               ]
-  //             }
-  //           ]
-  //         }
-  //       ],
-  //       raw: true
-  //     })
-  //     .then(function(results) {
-  //       res.json(results);
-  //     });
-  // });
+  });
 
   app.post('/api/students', function(req, res) {
     db.Students.create(req.body)

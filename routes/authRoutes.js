@@ -6,16 +6,16 @@ var ReactApp = React.createFactory(require('../app/components/ReactApp.js').Reac
 // ROUTES FOR USER AUTHENTICATION
 module.exports = function(app, passport) {
   app.get('/', function(req, res) {
-    res.render('index');
+    res.render('landing');
   });
 
   // These bring us to the main page with modals for sign up / sign in
   app.get('/signup', function(req, res) {
-    res.render('index');
+    res.render('landing');
   });
 
   app.get('/signin', function(req, res) {
-    res.render('index');
+    res.render('landing');
   });
 
   // When new user signs up we will take them to class summary
