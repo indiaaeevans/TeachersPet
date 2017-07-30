@@ -20,7 +20,7 @@
     <!-- PAGE HEADER  -->
     <div class="row">
       <div class="col s12">
-        <h4 class="center">Teacher Portal</h4>
+        <h4 class="center"><span id="teacher-name"></span> Teacher Portal</h4>
       </div>
     </div>
     <!-- HORIZONTAL RULE  -->
@@ -283,6 +283,12 @@
     $(".button-collapse ").sideNav();
     $('.button-collapse').sideNav('hide');
     $(".dropdown-button").dropdown();
+
+    $.get("/api/teacher_data", function(data) {
+      var teacherName = data.name;
+      $("#teacher-name").text(teacherName + "\'s");
+    });
+    
   });
 
   $('.datepicker').pickadate({
