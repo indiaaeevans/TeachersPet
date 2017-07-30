@@ -20,7 +20,6 @@ var ReactApp = React.createFactory(
     },
     render: function() {
       return (
-        <div>
           <div className="row">
             <div className="col s12 student-list-pnl">
               <div className="card-panel white">
@@ -41,7 +40,6 @@ var ReactApp = React.createFactory(
               </div>
             </div>
           </div>
-        </div>
       );
     }
   })

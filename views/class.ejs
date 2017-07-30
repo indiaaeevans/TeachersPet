@@ -63,7 +63,7 @@
             <!-- React Component -->
             <div id='main-mount'>
               <div>
-                <%- reactOutput %>
+                <%- reactOutput -%> 
               </div>
             </div>
           </div>
@@ -273,33 +273,10 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="/assets/js/index.js"></script>
   <script src="/assets/js/materialize.min.js"></script>
-  <script src='/assets/js/addStudent.js'></script>
+  <!-- <script src='/assets/js/addStudent.js'></script> -->
+  <script src='/assets/js/classSummary.js'></script>
   <script src='/assets/js/main.js'></script>
-<!--   <script src='/javascript/index.js'></script> -->  
- <script type="text/javascript">
-  $(document).ready(function() {
-    // initialize materialize
-    $('.modal').modal();
-    $(".button-collapse ").sideNav();
-    $('.button-collapse').sideNav('hide');
-    $(".dropdown-button").dropdown();
 
-    $.get("/api/teacher_data", function(data) {
-      var teacherName = data.name;
-      $("#teacher-name").text(teacherName + "\'s");
-    });
-    
-  });
-
-  $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15, // Creates a dropdown of 15 years to control year,
-    today: 'Today',
-    clear: 'Clear',
-    close: 'Ok',
-    closeOnSelect: false // Close upon selecting a date,
-  });
-  </script>
 </body>
 
 </html>
