@@ -2,7 +2,7 @@ var gulp = require('gulp'),
   browserify = require('gulp-browserify'),
   babel = require('gulp-babel');
 
-gulp.task('react-scripts', function() {
+gulp.task('scripts', function() {
   gulp
     .src(['app/main.js'])
     .pipe(
@@ -11,13 +11,7 @@ gulp.task('react-scripts', function() {
         transform: ['reactify']
       })
     )
-    .pipe(
-      babel({
-        presets: ['es2015', 'react'],
-        compact: false
-      })
-    )
     .pipe(gulp.dest('./public/assets/js/'));
 });
 
-gulp.task('default', ['react-scripts']);
+gulp.task('default', ['scripts']);
