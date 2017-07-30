@@ -74,22 +74,22 @@ module.exports = function(app, passport) {
 
   // Route for getting some data about our teacher to be used client side
   app.get('/api/teacher_data', function(req, res) {
-    if (!req.teacher) {
+    if (!req.user) {
       // If the user is not logged in, send back a filler name
       res.json({
         name: 'Teacher'
       });
     } else {
       // This capitalizes the first letter of each name, and lowercase all others
-      req.teacher.name = req.teacher.name.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+      req.user.name = req.user.name.toLowerCase().replace(/\b[a-z]/g, function(letter) {
         return letter.toUpperCase();
       });
 
       // Otherwise send back the user's name
       res.json({
-        name: req.teacher.name,
-        email: req.teacher.email,
-        id: req.teacher.id
+        name: req.user.name,
+        email: req.user.email,
+        id: req.user.id
       });
     }
   });
