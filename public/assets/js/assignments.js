@@ -17,7 +17,7 @@
                 divRow = $("<div class='row'>");
                 divCol1 = $("<div class='col s6'>");
                 divCol2 = $("<div class='col s6'>");
-                icon = $("<i class='tiny material-icons delete-icon'>assignment_turned_in</i>");
+                icon = $("<i class='right tiny material-icons'>assignment_turned_in</i>");
                 listItem = $("<li>");
 
                 divCol1.text(data[i].assignName);
