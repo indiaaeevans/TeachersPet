@@ -64,11 +64,15 @@ $(document).ready(function() {
       console.log(uploadDoc);
       //need to render get request to AWS for temp embedded urls to display persisted documents
       console.log('document has successfully uploaded');
+      location.href = '/class';
     });
   });
 
   $.get('/api/upload').then(function(data) {
-    console.log(data);
+    for (var i = 0; i < data.length; i++) {
+      var newDocument = `<li> <a href=${data[i].url} target="_blank">${data[i].key}</a></li>`;
+      $('#append-urls-here').append(newDocument);
+    }
   });
 
   // Whenever someone clicks a student

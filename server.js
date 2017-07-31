@@ -55,7 +55,7 @@ require('./routes/authRoutes.js')(app, passport);
 // load passport strategies
 require('./config/passport/passport.js')(passport, db.Teachers);
 //load amazon web service route
-// require('./routes/upload')(app);
+require('./routes/upload')(app);
 // load api routes
 require('./routes/apiRoutes')(app);
 
@@ -109,7 +109,6 @@ db.sequelize
                   'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png',
                 TeacherId: 1
               },
-
               {
                 name: 'Brittni Beyoncefan',
                 email: 'india@unc.edu',

@@ -42,7 +42,7 @@ var ReactApp = React.createFactory(
                     );
                   })}
                 </ul>
-              </div>
+              </div>  
             </div>
           </div>
       );
