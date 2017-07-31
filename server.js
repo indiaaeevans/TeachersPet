@@ -50,10 +50,6 @@ app.use(bodyParser.json());
 // Override with POST having ?_method=DELETE
 app.use(methodOverride('_method'));
 
-//Routes
-//=================================================
-// require('./routes/htmlRoutes')(app);
-
 // Authentication routes
 require('./routes/authRoutes.js')(app, passport);
 // load passport strategies
