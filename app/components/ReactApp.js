@@ -26,7 +26,7 @@ var ReactApp = React.createFactory(
 
                 return (
                   <a href="#student-summary-modal" id={students.name} key={i} className="collection-item name">
-                    <span className="showId">{students.id}</span> <span className="showStudentName">{students.name}</span>
+                    <span className="showId">{students.id}</span> | <span className="showStudentName">{students.name}</span>
                   </a>
                 );
                 })}
