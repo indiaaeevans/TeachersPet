@@ -18,7 +18,13 @@
             }
         }
 
-        function postGrade (grade){
+        $('#add-grade').on('click', function(event) {
+
+            location.href = '/grades';
+        });
+
+
+        function postGrade(grade) {
             // check that the form is filled out
             if ($("#assignments-select").val() == 0 | $("#grade-input").val() == 0 ) {
                 console.log("Please fill both required fields");
@@ -31,8 +37,10 @@
                 grade: grade
             }
 
-            $.post("/api/grades/:id", function() { 
+            // send an AJAX POST-request with the new grade
+            $.post("/api/grades/:id", newGrade).done(function(data) { 
                 
             });
         }
+
       });

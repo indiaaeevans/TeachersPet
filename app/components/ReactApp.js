@@ -20,31 +20,17 @@ var ReactApp = React.createFactory(
     },
     render: function() {
       return (
-          <div className="row">
-            <div className="col s12 student-list-pnl">
-              <div className="card-panel white">
-                <ul className="collection">
-                  {this.state.students.map((students, i) => {
-                    return (
-                      <li id={students.name} key={i} className="collection-item avatar">
-                        <a key={`${students.name + i}`}>
-                          <img src={students.imgUrl} alt="" className="circle" />
-                          
-                          <p key={students.name} className="name">
-                            {students.name}
-                          </p>
+              <div className="collection with-header center">
+                <div className="collection-header"><h5>Students</h5></div>
+                {this.state.students.map((students, i) => {
 
-                          <p key={students.id} className="name">
-                            {students.id}
-                          </p>                          
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>  
-            </div>
-          </div>
+                return (
+                  <a href="#student-summary-modal" id={students.name} key={i} className="collection-item name">
+                    <span className="showId">{students.id}</span> | <span className="showStudentName">{students.name}</span>
+                  </a>
+                );
+                })}
+              </div>
       );
     }
   })
