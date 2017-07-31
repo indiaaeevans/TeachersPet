@@ -1,8 +1,9 @@
+'use strict';
 $(document).ready(function() {
   function getTeacher() {
     $.get('/api/teacher_data').then(function(teacher) {
       console.log(teacher);
-      displayStudents(teacher.data);
+      displayStudents(teacher);
     });
   }
 
@@ -12,14 +13,31 @@ $(document).ready(function() {
     $.get(`/api/students/${id}`).then(function(data) {
       console.log(data);
       // code to show data on the page
+      var choices = ['Present', 'Present-Tardy', 'Absent'];
       for (var i = 0; i < data.length; i++) {
-        var listItem = $('<li>');
-        var studentInfo = data[i]['Students.name'];
-        listItem.append(`<h2>${studentInfo}</h2>`);
+        var studentName = data[i]['name'];
+        var studentId = data[i]['id'];
+        var listItem = $(`
+        <li class='collection-item'>
+        <p>Student Id: ${studentId} ${studentName}</p>
+        <form>
+          ${generateDropdown(studentName, studentId, choices[0])}
+          ${generateDropdown(studentName, studentId + 1, choices[1])}
+          ${generateDropdown(studentName, studentId + 2, choices[2])}
+        </form>
+        </li>`);
         $('#append-here').append(listItem);
       }
     });
   }
-  console.log('test');
+
+  function generateDropdown(studentName, inputId, choices) {
+    var dropDown = `
+      <p> 
+        <input class='with-gap' name=${studentName} id=${inputId} type='radio' value=${choices} />
+        <label for=${inputId}> ${choices}</label>
+      </p>`;
+    return dropDown;
+  }
   getTeacher();
 });

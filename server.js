@@ -88,28 +88,28 @@ db.sequelize
           db.Students
             .bulkCreate([
               {
-                name: 'Eyad Drakefan',
+                name: 'Eyad Qassem',
                 email: 'eyad@unc.edu',
                 imgUrl:
                   'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png',
                 TeacherId: 1
               },
               {
-                name: 'Henrietta likesDraketoo',
+                name: 'Henrietta Sharpe',
                 email: 'henrietta@unc.edu',
                 imgUrl:
                   'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png',
                 TeacherId: 1
               },
               {
-                name: 'India Arie',
+                name: 'India Evans',
                 email: 'india@unc.edu',
                 imgUrl:
                   'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/150px-Placeholder_no_text.svg.png',
                 TeacherId: 1
               },
               {
-                name: 'Brittni Beyoncefan',
+                name: 'Brittni Wright',
                 email: 'india@unc.edu',
                 imgUrl: 'http://img.usmagazine.com/social/beyonce-d5c55b42-2de9-48f4-84c4-bbd89bb622c8.jpg',
                 TeacherId: 1
