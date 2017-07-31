@@ -46,23 +46,6 @@ $(document).ready(function() {
         location.href = '/class';
     });
 
-<<<<<<< HEAD
-    $('#submit-doc-btn').on('click', function(event) {
-      event.preventDefault();
-      var formData = new FormData();
-      formData.append('pdf', $('input[type=file]')[0].files[0]);
-      $.ajax({
-        url: '/api/upload',
-        type: 'POST',
-        data: formData,
-        processData: false,
-        contentType: false
-      }).then(function(uploadDoc) {
-        console.log(uploadDoc);
-        //need to render get request to AWS for temp embedded urls to display persisted documents
-        console.log('document has successfully uploaded');
-      });
-=======
   $('#submit-doc-btn').on('click', function(event) {
     event.preventDefault();
     var formData = new FormData();
@@ -78,21 +61,17 @@ $(document).ready(function() {
       //need to render get request to AWS for temp embedded urls to display persisted documents
       console.log('document has successfully uploaded');
       location.href = '/class';
->>>>>>> 45a20a5a3d83959308eeffeed9183609e2ea6c6f
     });
+  });
 
-<<<<<<< HEAD
-    $.get('/api/upload').then(function(data) {
-      console.log(data);
-    });
-=======
   $.get('/api/upload').then(function(data) {
+
     for (var i = 0; i < data.length; i++) {
       var newDocument = `<li> <a href=${data[i].url} target="_blank">${data[i].key}</a></li>`;
       $('#append-urls-here').append(newDocument);
     }
+
   });
->>>>>>> 45a20a5a3d83959308eeffeed9183609e2ea6c6f
 
   // Whenever someone clicks a student
   // $(document).on("click", ".selected-student", function () {
