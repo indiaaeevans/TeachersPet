@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const methodOverride = require('method-override');
 //import bcrypt (which we need to secure seed data password)
 var bCrypt = require('bcrypt-nodejs');
 // Authentication dependencies
@@ -47,19 +46,15 @@ app.use(
 // parse application/json
 app.use(bodyParser.json());
 
-// Override with POST having ?_method=DELETE
-app.use(methodOverride('_method'));
-
 //Routes
 //=================================================
-// require('./routes/htmlRoutes')(app);
 
 // Authentication routes
 require('./routes/authRoutes.js')(app, passport);
 // load passport strategies
 require('./config/passport/passport.js')(passport, db.Teachers);
 //load amazon web service route
-require('./routes/upload')(app);
+// require('./routes/upload')(app);
 // load api routes
 require('./routes/apiRoutes')(app);
 
@@ -153,6 +148,37 @@ db.sequelize
                       }
                     ])
                     .then(function(value) {
+                      // db.Dates
+                      //   .create({
+                      //     schoolDates: Date.now()
+                      //   })
+                      //   .then(function(currDate) {
+                      //     db.Attendance
+                      //       .bulkCreate([
+                      //         {
+                      //           presence: 'Absent',
+                      //           DateId: 1,
+                      //           StudentId: 1
+                      //         },
+                      //         {
+                      //           presence: 'Tardy-Excused',
+                      //           DateId: 1,
+                      //           StudentId: 2
+                      //         },
+                      //         {
+                      //           presence: 'Tardy-Unexcused',
+                      //           DateId: 1,
+                      //           StudentId: 3
+                      //         },
+                      //         {
+                      //           presence: 'Present',
+                      //           DateId: 1,
+                      //           StudentId: 4
+                      //         }
+                      //       ])
+                      //       .then(function(attendance) {
+                      // console.log(attendance);
+
                       console.log(value);
                       db.Students
                         .findAll({
@@ -162,6 +188,14 @@ db.sequelize
                               include: [
                                 {
                                   model: db.Assignments
+                                }
+                              ]
+                            },
+                            {
+                              model: db.Attendance,
+                              include: [
+                                {
+                                  model: db.Dates
                                 }
                               ]
                             }
@@ -177,3 +211,5 @@ db.sequelize
         });
     });
   });
+// });
+// });
