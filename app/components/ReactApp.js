@@ -20,13 +20,13 @@ var ReactApp = React.createFactory(
     },
     render: function() {
       return (
-              <div className="collection">
-
+              <div className="collection with-header center">
+                <div className="collection-header"><h5>Students</h5></div>
                 {this.state.students.map((students, i) => {
 
                 return (
                   <a href="#student-summary-modal" id={students.name} key={i} className="collection-item name">
-                    <span className="showId">{students.id}</span> {students.name}
+                    <span className="showId">{students.id}</span> <span className="showStudentName">{students.name}</span>
                   </a>
                 );
                 })}
