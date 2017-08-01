@@ -5,7 +5,7 @@ module.exports = function(app) {
   // parse application/json
   app.use(bodyParser.json());
 
-  //route for retrieving all students
+  // route for retrieving all students
   app.get('/api/students/:id', function(req, res) {
     var id = req.params.id;
     db.Students
@@ -17,20 +17,47 @@ module.exports = function(app) {
       });
   });
 
+  // route for adding a student
   app.post('/api/students', function(req, res) {
     db.Students.create(req.body).then(function(students) {
       res.json(students);
     });
   });
 
-  //route for retrieving all assignments
+  // route for getting one student's grades
+  app.get('/api/:teacherid/student/:studentid', function(req, res){
+    db.Students.findOne({
+        where: { TeacherId: req.params.teacherid, id: req.params.studentid},
+        include: [
+          {
+            model: db.Grades
+          }
+        ]
+      })
+    .then(function(results){
+      res.json(results);
+    });
+  });
+
+  // route for posting a new grade to specific student
+  app.post('/api/:teacherid/student/:studentid', function(req, res){
+    db.Students.findOne(
+      {
+        where: { TeacherId: req.params.teacherid, id: req.params.studentid}
+      })
+    .then(function(results){
+      res.json(results);
+    });
+  });
+
+  // route for retrieving all assignments
   app.get('/api/assignments', function(req, res) {
     db.Assignments.findAll({}).then(function(results) {
       res.json(results);
     });
   });
 
-  // route for saving a new assignment
+  // route for adding a new assignment
   app.post('/api/assignments', function(req, res) {
     db.Assignments
       .create({
@@ -41,6 +68,7 @@ module.exports = function(app) {
       });
   });
 
+  // route for getting Dates for the attendance page
   app.get('/api/attendance', function(req, res) {
     db.Dates
       .findAll({
