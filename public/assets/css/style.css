@@ -15,6 +15,15 @@ footer {
   font-size: 12px;
 }
 
+#append-here label {
+  padding-top: 0;
+  color: #455a64;
+}
+
+#append-here {
+  font-family: 'Zilla Slab', serif;
+}
+
 a.brand-logo {
   font-size: 18px;
 }
