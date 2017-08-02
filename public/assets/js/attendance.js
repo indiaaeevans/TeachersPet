@@ -1,5 +1,12 @@
 'use strict';
 $(document).ready(function() {
+  function initHandlers() {
+    $('#submit-attendance-btn').on('click', submitAttendance);
+    $('.modal').modal();
+    $('select').material_select();
+    datePickerInit();
+  }
+
   function datePickerInit() {
     $('.datepicker').pickadate({
       selectMonths: true, // Creates a dropdown to control month
@@ -31,7 +38,7 @@ $(document).ready(function() {
         var studentId = data[i]['id'];
         var listItem = $(`
         <li class='collection-item'>
-        <p id=${studentId}>Student Id: ${studentId} ${studentName}</p>
+        <p id=${studentId}>Student Id: ${studentId} | ${studentName}</p>
         <form>
           ${generateDropdown(studentId, studentName, studentName, choices[0])}
           ${generateDropdown(studentId, studentName, studentName + 1, choices[1])}
@@ -83,8 +90,30 @@ $(document).ready(function() {
     });
   }
 
-  $('#submit-attendance-btn').on('click', submitAttendance);
-
-  datePickerInit();
+  initHandlers();
   getTeacher();
+
+  // ===================================================
+  // Future facial recognition
+  var video = document.querySelector('#videoElement');
+
+  navigator.getUserMedia =
+    navigator.getUserMedia ||
+    navigator.webkitGetUserMedia ||
+    navigator.mozGetUserMedia ||
+    navigator.msGetUserMedia ||
+    navigator.oGetUserMedia;
+
+  if (navigator.getUserMedia) {
+    navigator.getUserMedia({ video: true }, handleVideo, videoError);
+  }
+
+  function handleVideo(stream) {
+    video.src = window.URL.createObjectURL(stream);
+  }
+
+  function videoError(e) {
+    // do something
+    console.log('not working!');
+  }
 });
