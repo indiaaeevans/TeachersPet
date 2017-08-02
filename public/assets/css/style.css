@@ -151,6 +151,10 @@ nav {
   margin-bottom: 20px;
 }
 
+#dropdown1 li a {
+  color: #424242;
+}
+
 #landing {
   margin-bottom: 0;
 }
@@ -166,11 +170,16 @@ nav {
   margin-bottom: 10px;
   font-size: 14px;
   font-family: 'Zilla Slab', serif;
-  background-color: #99badd;
+  background-color: #73a0d0;
 }
 
 a.teacher-menu:hover{
-  background-color: #81d4fa;
+  background-color: #99badd;
+}
+
+/* text color for list of students  */
+.collection a.collection-item {
+  color: #ff9100;
 }
 
 .extra-padding {

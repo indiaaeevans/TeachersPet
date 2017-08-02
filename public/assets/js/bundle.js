@@ -22400,7 +22400,7 @@
 	          'Students',
 	          React.createElement(
 	            'a',
-	            { href: '#add-student-modal', className: '' },
+	            { href: '#add-student-modal', className: 'right' },
 	            React.createElement(
 	              'i',
 	              { className: 'material-icons orange-text' },
