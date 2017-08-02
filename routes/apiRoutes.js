@@ -25,29 +25,28 @@ module.exports = function(app) {
     var studentid = req.params.studentid;
     db.Students
       .findOne({
-        where: { 
+        where: {
           TeacherId: id,
           id: studentid
-         }
+        }
       })
       .then(function(results) {
-
         res.json(results);
       });
-  });  
+  });
 
   // route for adding a student
   app.post('/api/students', function(req, res) {
-    db.Students.create(req.body)
-    .then(function(students) {
+    db.Students.create(req.body).then(function(students) {
       res.json(students);
     });
   });
 
   // route for getting one student's grades
-  app.get('/api/:teacherid/student/:studentid', function(req, res){
-    db.Students.findOne({
-        where: { 
+  app.get('/api/:teacherid/student/:studentid', function(req, res) {
+    db.Students
+      .findOne({
+        where: {
           TeacherId: req.params.teacherid,
           id: req.params.studentid
         },
@@ -57,15 +56,14 @@ module.exports = function(app) {
           }
         ]
       })
-    .then(function(results){
-      res.json(results);
-    });
+      .then(function(results) {
+        res.json(results);
+      });
   });
 
   // route for posting a new grade to specific student
-  app.post('/api/grades', function(req, res){
-    db.Grades.create(req.body)
-    .then(function(results){
+  app.post('/api/grades', function(req, res) {
+    db.Grades.create(req.body).then(function(results) {
       res.json(results);
     });
   });
@@ -92,12 +90,16 @@ module.exports = function(app) {
   app.get('/api/attendance', function(req, res) {
     db.Dates
       .findAll({
-        include: [{
-          model: db.Attendance,
-          include: [{
-            model: db.Students
-          }]
-        }]
+        include: [
+          {
+            model: db.Attendance,
+            include: [
+              {
+                model: db.Students
+              }
+            ]
+          }
+        ]
       })
       .then(function(currDate) {
         res.json(currDate);
@@ -153,29 +155,28 @@ module.exports = function(app) {
   });
 
   // Get events
-  app.get('/api/events', function(req, res) {
-      var id = req.params.id;
-      var currentDate = new Date();
-      var endDate = moment().add(7, 'days').toDate();
-      console.log(endDate);
-      db.Cal_Events
-        .findAll({
-            where: {
-              eventDate: {
-                $between: [ currentDate, endDate]
-              }
-            }
-          })
-    .then(function(results) {
-      res.json(results);
-    });
+  app.get('/api/events/', function(req, res) {
+    var id = req.params.id;
+    var currentDate = new Date();
+    var endDate = moment().add(7, 'days').toDate();
+    console.log(endDate);
+    db.Cal_Events
+      .findAll({
+        where: {
+          eventDate: {
+            $between: [currentDate, endDate]
+          }
+        }
+      })
+      .then(function(results) {
+        res.json(results);
+      });
   });
 
   // Count Absent
   app.get('/api/absent/:id', function(req, res) {
     var id = req.params.id;
     db.Attendance
-
       .count({
         where: {
           StudentId: id,
