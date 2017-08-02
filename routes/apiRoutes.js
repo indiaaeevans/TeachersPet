@@ -1,5 +1,6 @@
 var db = require('../models');
 const bodyParser = require('body-parser');
+var moment = require('moment');
 
 module.exports = function(app) {
   // parse application/json
@@ -51,7 +52,7 @@ module.exports = function(app) {
     });
   });
 
-  // route for retrieving all assignments
+  //route for retrieving all assignments
   app.get('/api/assignments', function(req, res) {
     db.Assignments.findAll({}).then(function(results) {
       res.json(results);
@@ -73,22 +74,19 @@ module.exports = function(app) {
   app.get('/api/attendance', function(req, res) {
     db.Dates
       .findAll({
-        include: [
-          {
-            model: db.Attendance,
-            include: [
-              {
-                model: db.Students
-              }
-            ]
-          }
-        ]
+        include: [{
+          model: db.Attendance,
+          include: [{
+            model: db.Students
+          }]
+        }]
       })
       .then(function(currDate) {
         res.json(currDate);
       });
   });
 
+  // attendance
   app.post('/api/attendance', function(req, res) {
     /* 
           JSON sent from client should look like: 
@@ -126,6 +124,48 @@ module.exports = function(app) {
             });
         }
         res.send(`sucessfully updated attendance for students for ${currAttendance[0].attendanceDate}`);
+      });
+  });
+
+  // Post event
+  app.post('/api/events', function(req, res) {
+    db.Cal_Events.create(req.body).then(function(events) {
+      res.json(events);
+    });
+  });
+
+  // Get events
+  app.get('/api/events/', function(req, res) {
+      var id = req.params.id;
+      var currentDate = new Date();
+      var endDate = moment().add(7, 'days').toDate();
+      console.log(endDate);
+      db.Cal_Events
+        .findAll({
+            where: {
+              eventDate: {
+                $between: [ currentDate, endDate]
+              }
+            }
+          })
+    .then(function(results) {
+      res.json(results);
+    });
+  });
+
+  // Count Absent
+  app.get('/api/absent/:id', function(req, res) {
+    var id = req.params.id;
+    db.Attendance
+
+      .count({
+        where: {
+          StudentId: id,
+          presence: 'Absent'
+        }
+      })
+      .then(function(results) {
+        res.json(results);
       });
   });
 };
