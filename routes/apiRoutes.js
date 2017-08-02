@@ -19,7 +19,8 @@ module.exports = function(app) {
 
   // route for adding a student
   app.post('/api/students', function(req, res) {
-    db.Students.create(req.body).then(function(students) {
+    db.Students.create(req.body)
+    .then(function(students) {
       res.json(students);
     });
   });
@@ -27,7 +28,10 @@ module.exports = function(app) {
   // route for getting one student's grades
   app.get('/api/:teacherid/student/:studentid', function(req, res){
     db.Students.findOne({
-        where: { TeacherId: req.params.teacherid, id: req.params.studentid},
+        where: { 
+          TeacherId: req.params.teacherid,
+          id: req.params.studentid
+        },
         include: [
           {
             model: db.Grades
@@ -40,11 +44,8 @@ module.exports = function(app) {
   });
 
   // route for posting a new grade to specific student
-  app.post('/api/:teacherid/student/:studentid', function(req, res){
-    db.Students.findOne(
-      {
-        where: { TeacherId: req.params.teacherid, id: req.params.studentid}
-      })
+  app.post('/api/grades', function(req, res){
+    db.Grades.create(req.body)
     .then(function(results){
       res.json(results);
     });
