@@ -22403,7 +22403,7 @@
 	            { href: '#add-student-modal', className: 'right' },
 	            React.createElement(
 	              'i',
-	              { className: 'material-icons orange-text' },
+	              { className: 'material-icons orange-text text-accent-2' },
 	              ' add_circle'
 	            )
 	          )

@@ -11,6 +11,10 @@ h5 {
     background-color: #99badd;  
 }
 
+footer {
+  font-size: 12px;
+}
+
 a.brand-logo {
   font-size: 18px;
 }
@@ -20,7 +24,7 @@ a.brand-logo {
   font-size: 18px;
   width: 160px;
   text-align: center;
-  margin-right: 25px;
+  margin-right: 15px;
 }
 
 #dropdown1 li {
@@ -168,13 +172,19 @@ nav {
   min-width: 100%;
   margin-top: 20px;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 10px;
   font-family: 'Zilla Slab', serif;
   background-color: #73a0d0;
 }
 
 a.teacher-menu:hover{
   background-color: #99badd;
+}
+
+#class-border {
+  border: solid #acc7e3;
+  padding: 50px 50px 10px 50px;
+  margin-bottom: 30px;
 }
 
 /* text color for list of students  */
@@ -293,7 +303,7 @@ label {
 }
 
 #footer-filler {
-  height: 70px;
+  height: 50px;
 }
 
 .globe {
