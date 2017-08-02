@@ -186,7 +186,11 @@ nav {
   background-color: #73a0d0;
 }
 
-a.teacher-menu:hover{
+.menu-button {
+  background-color: #73a0d0;
+}
+
+a.teacher-menu:hover, .menu-button:hover {
   background-color: #99badd;
 }
 
