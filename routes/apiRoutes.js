@@ -153,7 +153,7 @@ module.exports = function(app) {
   });
 
   // Get events
-  app.get('/api/events/', function(req, res) {
+  app.get('/api/events', function(req, res) {
       var id = req.params.id;
       var currentDate = new Date();
       var endDate = moment().add(7, 'days').toDate();
