@@ -6,7 +6,7 @@ module.exports = function(app) {
   // parse application/json
   app.use(bodyParser.json());
 
-  // route for retrieving all students
+  // route for retrieving all students under one teacher
   app.get('/api/students/:id', function(req, res) {
     var id = req.params.id;
     db.Students
@@ -17,6 +17,24 @@ module.exports = function(app) {
         res.json(results);
       });
   });
+
+  // route for retrieving ONE student under one teacher
+  app.get('/api/students/:id/:studentid', function(req, res) {
+    console.log(res);
+    var id = req.params.id;
+    var studentid = req.params.studentid;
+    db.Students
+      .findOne({
+        where: { 
+          TeacherId: id,
+          id: studentid
+         }
+      })
+      .then(function(results) {
+
+        res.json(results);
+      });
+  });  
 
   // route for adding a student
   app.post('/api/students', function(req, res) {
