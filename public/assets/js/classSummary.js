@@ -1,6 +1,7 @@
 $(document).ready(function() {
   // store logged in teacher's id and name
-  var id, teacherName;  
+  var id, teacherName, studentId;  
+  
   $.get("/api/teacher_data", function(data) {
     var teacherName = data.name;
     id = data.id;
@@ -94,14 +95,14 @@ $(document).ready(function() {
 
   //---------pop-up modal with student summary---------------
   $(document).on("click", ".listed-student", function() {
-    var studentId = $(this).attr("id");
-    console.log("student id", studentId)
-    // access table of ALL students
+    studentId = $(this).attr("id");
     $.ajax({
+      // get the student that was clicked
       url: "/api/students/" + id + "/" + studentId,
       method: "GET"
-    }).done(function(data) {
-      console.log("ONE STUDENT'S", data);
+    })
+    .done(function(data) {
+
       var imgUrl = data.imgUrl;
       var studentName = data.name;
       var studentEmail = data.email;
@@ -136,4 +137,51 @@ $(document).ready(function() {
     // open modal
     $("#student-summary-modal").modal("open");
   });
+
+  // ====================================================
+
+  // get all assignments and put in a dropdown form
+        $.get("/api/assignments").then(assignmentSelect(data));
+
+        function assignmentSelect(data){
+            for (var i = 0; i < data.length; i++){
+                var option = $("<option>");
+                option.text(data[i].assignName);
+                option.attr("data-id", data[i].id);
+                $("#assignments-select").append(option);
+            }
+        }
+
+        $('#add-grade').on('click', function(event) {
+            event.preventDefault();
+            // get the assignment id from the selected option
+            var assignmentId = $("#assignments-select option:selected").data("id");
+            var grade = $("#grade-input").val();
+            // check that the form is filled out
+            if ($("#assignments-select").val() == 0 | grade == 0 ) {
+                alert("Please fill both required fields");
+                return;
+            } 
+            else {
+                postGrade(grade, assignmentId);
+            }
+        });
+
+
+        function postGrade(grade, assignment) {
+            studentId = 1;
+            // new object to post to the database
+            var newGrade = {
+                assignmentId: assignment,
+                studentId: studentId,
+                grade: grade
+            }
+
+            // send an AJAX POST-request with the new grade
+            $.post("/api/grades/:id", newGrade).done(function(data) { 
+                console.log("new grade posted:", newGrade);
+                location.href = '/grades';
+            });
+        }
+
 });
