@@ -7,8 +7,31 @@ h5 {
   font-family: 'Zilla Slab', serif;
 }
 
-.nav-color, .page-footer {
-    background-color: #99badd;  
+.nav-color,
+.page-footer {
+  background-color: #99badd;
+}
+a.footerWords {
+  color: white;
+   font-family: 'Zilla Slab', serif;
+}
+.page-footer {
+color: white;
+font: 10px;
+}
+
+
+footer {
+  font-size: 12px;
+}
+
+#append-here label {
+  padding-top: 0;
+  color: #455a64;
+}
+
+#append-here {
+  font-family: 'Zilla Slab', serif;
 }
 
 footer {
@@ -346,6 +369,11 @@ main {
 
 #enter-date-label {
   display: inline;
+}
+
+.eventTitle {
+  font-size: 12px;
+  font-style: italic;
 }
 
 /* media tags */

@@ -63,7 +63,6 @@ module.exports = function(app) {
 
   // route for posting a new grade to specific student
   app.post('/api/grades', function(req, res) {
-    console.log(req.body);
     db.Grades.create(req.body).then(function(results) {
       res.json(results);
     });
