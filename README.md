@@ -1,10 +1,11 @@
-#  **Teachers Pet is an intuitive application. This app is used as a class management tool. It allows teachers to be able to manage their students. grades, attendance, assignments, and be able to send and/or receive documentation.**
+#  **Teachers Pet allows teachers to manage their students, grades, attendance, and assignments.**
+
+A full-stack classroom application that allows a teacher to securely log in and track students' attendance, grades, and assignments. Utilizes MySQL, EJS, React, jQuery, and Passport.
 
 To view the application click the link below:
 
 https://official-teacherspet.herokuapp.com/
 
-We used an agile-waterfall hybrid methodology to be able to complete this application within at 3-week timeframe. 
 
 # **Quick synopsis of Teachers Pet**
 
@@ -33,7 +34,7 @@ We used an agile-waterfall hybrid methodology to be able to complete this applic
 ### Database
 
 - MYSQL
-- Sequealize 
+- Sequalize 
 
 ### Authentication 
 
