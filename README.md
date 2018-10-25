@@ -6,15 +6,6 @@ To view the application click the link below:
 
 https://official-teacherspet.herokuapp.com/
 
-
-# **Quick synopsis of Teachers Pet**
-
-- Shows specific students assigned to the teacher that is logged in
-- Tracks attendances of students ( present, tardy, present-tardy)
-- uses facial recognition to allow students to log in (still testing feature)
-- Manages and stores assignments in database
--  allows uploading of documents via AWS
-- Adds events to the teacher portal calendar
 **## Technologies**
 
 ### Client-side:
